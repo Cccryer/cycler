@@ -1,0 +1,42 @@
+from typing import Protocol
+from type.pipeline_result import PipelineRunResult
+
+class WorkflowCallbacks(Protocol):
+    """
+    鸭子类型接口, 用于pipeline回调, 可只实现需要的回调
+    """
+
+    def pipeline_start(self, names: list[str]) -> None:
+        """Execute this callback to signal when the entire pipeline starts."""
+        ...
+
+    def pipeline_end(self, results: list[PipelineRunResult]) -> None:
+        """Execute this callback to signal when the entire pipeline ends."""
+        ...
+
+    def workflow_start(self, name: str, instance: object) -> None:
+        """Execute this callback when a workflow starts."""
+        ...
+
+    def workflow_end(self, name: str, instance: object) -> None:
+        """Execute this callback when a workflow ends."""
+        ...
+
+
+    def error(
+        self,
+        message: str,
+        cause: BaseException | None = None,
+        stack: str | None = None,
+        details: dict | None = None,
+    ) -> None:
+        """Handle when an error occurs."""
+        ...
+
+    def warning(self, message: str, details: dict | None = None) -> None:
+        """Handle when a warning occurs."""
+        ...
+
+    def log(self, message: str, details: dict | None = None) -> None:
+        """Handle when a log message occurs."""
+        ...
