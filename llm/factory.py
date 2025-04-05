@@ -2,7 +2,7 @@ from collections.abc import Callable
 from typing import Any, ClassVar
 
 from llm.protocol.base import ChatModel, EmbeddingModel
-from llm.Openai.model import OpenAIChatModel, OpenAIEmbeddingModel, OpenAICompletionModel
+from llm.openai.model import OpenAIChatModel, OpenAIEmbeddingModel, OpenAICompletionModel
 class ModelFactory:
 
     _chat_registry: ClassVar[dict[str, Callable[..., ChatModel]]] = {}

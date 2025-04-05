@@ -1,0 +1,543 @@
+2025-04-05 16:06:48,615 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:06:48,616 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:17:47,404 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:17:47,407 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:20:33,027 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:20:33,027 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:23:08,282 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:23:08,282 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:23:08,283 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 16:23:08,283 - storage.file_pipeline_storage - INFO - total files: 0
+2025-04-05 16:24:00,864 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:24:00,865 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:24:00,865 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 16:24:00,865 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 16:24:00,867 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 16:24:00,868 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 16:24:00,868 - __main__ - INFO - Running standard indexing.
+2025-04-05 16:25:06,604 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:25:06,604 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:25:06,604 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 16:25:06,605 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 16:25:06,606 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 16:25:06,607 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 16:25:06,607 - __main__ - INFO - Running standard indexing.
+2025-04-05 16:25:06,607 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 16:26:07,267 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:26:07,267 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:26:07,268 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 16:26:07,268 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 16:26:07,269 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 16:26:07,270 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 16:26:07,270 - __main__ - INFO - Running standard indexing.
+2025-04-05 16:26:07,270 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 16:26:07,270 - __main__ - ERROR - error running workflow starting documents
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 70, in _run_pipeline
+    await _dump_json(context)
+  File "/home/fucker/aai/cycler/main.py", line 42, in _dump_json
+    "stats.json", json.dumps(asdict(context.stats), indent=4, ensure_ascii=False)
+AttributeError: 'PipelineRunContext' object has no attribute 'stats'. Did you mean: 'state'?
+2025-04-05 16:32:48,125 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 16:32:59,579 - storage.input.factory - INFO - using file storage for input
+2025-04-05 16:35:01,221 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 16:35:18,853 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 16:35:45,471 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 16:36:00,245 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 16:36:21,852 - __main__ - INFO - Running standard indexing.
+2025-04-05 16:37:12,358 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:08:18,925 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:08:18,926 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:08:18,926 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:08:18,926 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:08:18,930 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:08:18,931 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:08:18,931 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:08:18,931 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:08:18,976 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:08:19,029 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 30, in run_workflow
+    context.callbacks,
+AttributeError: 'PipelineRunContext' object has no attribute 'callbacks'
+2025-04-05 17:08:43,872 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:08:43,872 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:08:43,873 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:08:43,874 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:08:43,880 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:08:43,881 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:08:43,881 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:08:43,883 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:10:22,449 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:10:43,195 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 30, in run_workflow
+    context.callbacks,
+AttributeError: 'PipelineRunContext' object has no attribute 'callbacks'
+2025-04-05 17:11:25,493 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:11:25,493 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:11:25,493 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:11:25,493 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:11:25,497 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:11:25,497 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:11:25,497 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:11:25,498 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:11:25,510 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:11:25,530 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 68, in create_base_text_units
+    if len(group_by_columns) > 0
+TypeError: object of type 'FieldInfo' has no len()
+2025-04-05 17:11:48,867 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:11:48,868 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:11:48,868 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:11:48,869 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:11:48,874 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:11:48,875 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:11:48,875 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:11:48,878 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:12:17,053 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:12:51,605 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 68, in create_base_text_units
+    if len(group_by_columns) > 0
+TypeError: object of type 'FieldInfo' has no len()
+2025-04-05 17:40:18,864 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:40:18,864 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:40:18,864 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:40:18,865 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:40:18,868 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:40:18,868 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:40:18,868 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:40:18,869 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:40:18,919 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:40:20,051 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
+    hf_hub_download(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fa86-64e057cb51446b2d208f6023;df0029a5-0889-4403-8bd8-09a888c127d9)
+
+Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
+    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
+    raise EnvironmentError(
+OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-05 17:50:11,427 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:50:11,427 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:50:11,427 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:50:11,427 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:50:11,429 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:50:11,430 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:50:11,430 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:50:11,431 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:50:11,440 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:50:12,244 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
+    hf_hub_download(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fcd6-0134d95402aaecc836af151f;5a4c72a6-e52b-48ba-8f25-13d833a3a1f1)
+
+Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
+    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
+    raise EnvironmentError(
+OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-05 17:50:36,526 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:50:36,526 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:50:36,527 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:50:36,527 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:50:36,534 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:50:36,535 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:50:36,535 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:50:36,538 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:50:51,395 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:51:36,371 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
+    hf_hub_download(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fd1a-622c65c11e750b945fbd3c81;65a3f231-0608-438d-8715-602135f1130f)
+
+Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
+    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
+    raise EnvironmentError(
+OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-05 17:51:47,257 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:51:47,257 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:51:47,257 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:51:47,257 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:51:47,259 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:51:47,259 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:51:47,260 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:51:47,261 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:51:47,270 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 17:51:47,945 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
+    response.raise_for_status()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
+    hf_hub_download(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
+    return _hf_hub_download_to_cache_dir(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
+    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
+    raise head_call_error
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
+    metadata = get_hf_file_metadata(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
+    return fn(*args, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
+    r = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
+    response = _request_wrapper(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
+    hf_raise_for_status(response)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
+    raise _format(RepositoryNotFoundError, message, response) from e
+huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fd36-53c9fbdd4f052019279a2b8b;8672c77e-0626-4eed-bf53-e4ca7f2e1e5c)
+
+Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
+Please make sure you specified the correct `repo_id` and `repo_type`.
+If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
+Invalid username or password.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
+    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
+    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
+    resolved_config_file = cached_file(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
+    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
+    raise EnvironmentError(
+OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
+If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
+2025-04-05 17:56:01,254 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 17:56:01,254 - storage.input.factory - INFO - using file storage for input
+2025-04-05 17:56:01,254 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 17:56:01,255 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 17:56:01,260 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 17:56:01,261 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 17:56:01,261 - __main__ - INFO - Running standard indexing.
+2025-04-05 17:56:01,262 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 17:56:07,065 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:40:06,908 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:40:06,909 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:40:06,909 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:40:06,909 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:40:06,912 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:40:06,912 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:40:06,912 - __main__ - INFO - Running standard indexing.
+2025-04-05 18:40:06,914 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 18:40:06,947 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:40:14,200 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 23, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in create_base_text_units
+    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in <lambda>
+    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 93, in chunker
+    chunked = chunk_text(
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 50, in chunk_text
+    input.apply(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 53, in <lambda>
+    lambda x: run_strategy(
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 77, in run_strategy
+    strategy_results = strategy_exec(texts, config)
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/strategies.py", line 25, in run_tokens
+    return split_multiple_texts_on_tokens(
+  File "/home/fucker/aai/cycler/workflows/opera/text_split/text_split.py", line 39, in split_multiple_texts_on_tokens
+    chunk_text = tokenizer.decode([id for _, id in chunk_ids])
+AttributeError: 'Tokenizer' object has no attribute 'decode'
+2025-04-05 18:40:38,439 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:40:38,440 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:40:38,440 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:40:38,440 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:40:38,449 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:40:38,450 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:40:38,450 - __main__ - INFO - Running standard indexing.
+2025-04-05 18:40:38,452 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 18:40:43,942 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:40:53,580 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
+    result = await workflow_function(config, context)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 23, in run_workflow
+    output = create_base_text_units(
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in create_base_text_units
+    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in <lambda>
+    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
+  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 93, in chunker
+    chunked = chunk_text(
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 50, in chunk_text
+    input.apply(
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
+    return op.apply().__finalize__(self, method="apply")
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
+    return self.apply_standard()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
+    results, res_index = self.apply_series_generator()
+  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
+    results[i] = self.func(v, *self.args, **self.kwargs)
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 53, in <lambda>
+    lambda x: run_strategy(
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 77, in run_strategy
+    strategy_results = strategy_exec(texts, config)
+  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/strategies.py", line 25, in run_tokens
+    return split_multiple_texts_on_tokens(
+  File "/home/fucker/aai/cycler/workflows/opera/text_split/text_split.py", line 39, in split_multiple_texts_on_tokens
+    chunk_text = tokenizer.decode([id for _, id in chunk_ids])
+AttributeError: 'Tokenizer' object has no attribute 'decode'
+2025-04-05 18:41:46,074 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:41:46,075 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:41:46,075 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:41:46,075 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:41:46,077 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:41:46,077 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:41:46,077 - __main__ - INFO - Running standard indexing.
+2025-04-05 18:41:46,078 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 18:41:46,086 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:41:48,498 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 79, in _run_pipeline
+    yield PipelineRunResult(
+TypeError: PipelineRunResult() takes no arguments
+2025-04-05 18:42:36,391 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:42:36,392 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:42:36,392 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:42:36,393 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:42:36,399 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:42:36,401 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:42:36,401 - __main__ - INFO - Running standard indexing.
+2025-04-05 18:42:36,403 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 18:42:41,249 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:46:33,690 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:46:33,691 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:46:33,691 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:46:33,691 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:46:33,693 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:46:33,693 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:46:33,693 - __main__ - INFO - Running standard indexing.
+2025-04-05 18:46:33,694 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 18:46:33,705 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:46:35,637 - __main__ - ERROR - error running workflow create_base_text_unit
+Traceback (most recent call last):
+  File "/home/fucker/aai/cycler/main.py", line 79, in _run_pipeline
+    yield PipelineRunResult(
+TypeError: PipelineRunResult.__init__() got an unexpected keyword argument 'errors'
+2025-04-05 18:47:08,924 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:47:08,924 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:47:08,925 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:47:08,925 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:47:08,926 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:47:08,927 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:47:08,927 - __main__ - INFO - Running standard indexing.
+2025-04-05 18:47:08,927 - __main__ - INFO - Final # of rows loaded: 1
+2025-04-05 18:47:08,935 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:47:10,802 - __main__ - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
+0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
+
+[1 rows x 4 columns], state={}, errors=None)

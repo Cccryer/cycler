@@ -1,4 +1,4 @@
-from config.model.llmconfig import LanguageModelConfig
+from config.model.llm_config import LanguageModelConfig
 from pathlib import Path
 import yaml
 from yaml.error import YAMLError

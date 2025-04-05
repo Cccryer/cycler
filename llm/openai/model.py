@@ -1,11 +1,11 @@
 from llm.protocol.base import ChatModel, EmbeddingModel
 from typing import Any
 from collections.abc import AsyncGenerator, Generator
-from config.model.llmconfig import LanguageModelConfig
+from config.model.llm_config import LanguageModelConfig
 from openai import OpenAI, AsyncOpenAI
 from openai.types.responses.response import Response as OpenAIResponse
 from llm.response.base import ModelResponse, Usage
-from llm.utils import run_coroutine_sync
+from utils.thread import run_coroutine_sync
 from openai.types.create_embedding_response import CreateEmbeddingResponse
 from openai.types.chat.chat_completion import ChatCompletion
 from openai.types.chat.chat_completion_chunk import ChatCompletionChunk

@@ -1,14 +1,11 @@
-# Copyright (c) 2024 Microsoft Corporation.
-# Licensed under the MIT License
-
-"""A module containing 'PipelineStorage' model."""
-
 import re
 from abc import ABCMeta, abstractmethod
 from collections.abc import Iterator
 from datetime import datetime
 from typing import Any
+import logging
 
+logger = logging.getLogger(__name__)
 
 class PipelineStorage(metaclass=ABCMeta):
 

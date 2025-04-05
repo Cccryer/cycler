@@ -1,8 +1,5 @@
 from collections.abc import Generator
-
-from workflow import Workflow
-
-
+from type.workflow import Workflow
 class Pipeline:
     """Encapsulates running workflows."""
 

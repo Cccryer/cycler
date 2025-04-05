@@ -1,5 +1,0 @@
-cursor:
-  base_url: "https://api.cursor.sh"
-  api_key: "${CURSOR_API_KEY}"
-  model: "default"
-  timeout: 30 

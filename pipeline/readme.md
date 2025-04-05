@@ -1,0 +1,2 @@
+# pipeline
+这个文件夹实现各种预定好的pipeline，每个pipeline由多个workflow算子串成
