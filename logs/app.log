@@ -541,3 +541,35 @@ TypeError: PipelineRunResult.__init__() got an unexpected keyword argument 'erro
 0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
 
 [1 rows x 4 columns], state={}, errors=None)
+2025-04-05 18:54:59,048 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 18:54:59,048 - storage.input.factory - INFO - using file storage for input
+2025-04-05 18:54:59,048 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 18:54:59,049 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 18:54:59,051 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 18:54:59,052 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 18:54:59,052 - run.run - INFO - Running standard indexing.
+2025-04-05 18:54:59,053 - run.run - INFO - Final # of rows loaded: 1
+2025-04-05 18:54:59,076 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 18:55:02,219 - run.run - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
+0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
+
+[1 rows x 4 columns], state={}, errors=None)
+2025-04-05 19:09:24,449 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 19:09:24,449 - storage.input.factory - INFO - using file storage for input
+2025-04-05 19:09:24,449 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 19:09:24,449 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 19:09:24,451 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 19:09:24,451 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 19:09:24,451 - run.run - INFO - Running standard indexing.
+2025-04-05 19:09:24,452 - run.run - INFO - Final # of rows loaded: 1
+2025-04-05 19:09:24,467 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 19:09:27,210 - run.run - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
+0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
+
+[1 rows x 4 columns], state={}, errors=None)
+2025-04-05 19:09:27,218 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 19:09:27,221 - utils.storage - INFO - reading table from storage: text_units.parquet
+2025-04-05 19:09:27,239 - run.run - INFO - PipelineRunResult(workflow='create_final_documents', result=                                                  id  human_readable_id  ...              creation_date metadata
+0  02612f39bec86bb5f305619858d71da82597ad1c24e487...                  1  ...  2025-04-05 16:23:56 +0800      NaN
+
+[1 rows x 7 columns], state={}, errors=None)
