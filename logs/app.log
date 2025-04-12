@@ -573,3 +573,122 @@ TypeError: PipelineRunResult.__init__() got an unexpected keyword argument 'erro
 0  02612f39bec86bb5f305619858d71da82597ad1c24e487...                  1  ...  2025-04-05 16:23:56 +0800      NaN
 
 [1 rows x 7 columns], state={}, errors=None)
+2025-04-05 22:05:10,163 - storage.input.factory - INFO - loading input from root_dir=input
+2025-04-05 22:05:10,163 - storage.input.factory - INFO - using file storage for input
+2025-04-05 22:05:10,164 - storage.file_pipeline_storage - INFO - search input/input for files matching 
+2025-04-05 22:05:10,164 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-05 22:05:10,170 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
+2025-04-05 22:05:10,171 - storage.input.text - INFO - Total number of unfiltered text rows: 1
+2025-04-05 22:05:10,171 - run.run - INFO - Running standard indexing.
+2025-04-05 22:05:10,173 - run.run - INFO - Final # of rows loaded: 1
+2025-04-05 22:05:10,228 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 22:05:13,303 - run.run - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
+0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
+
+[1 rows x 4 columns], state={}, errors=None)
+2025-04-05 22:05:13,323 - utils.storage - INFO - reading table from storage: documents.parquet
+2025-04-05 22:05:13,367 - utils.storage - INFO - reading table from storage: text_units.parquet
+2025-04-05 22:05:13,412 - run.run - INFO - PipelineRunResult(workflow='create_final_documents', result=                                                  id  human_readable_id  ...              creation_date metadata
+0  02612f39bec86bb5f305619858d71da82597ad1c24e487...                  1  ...  2025-04-05 16:23:56 +0800      NaN
+
+[1 rows x 7 columns], state={}, errors=None)
+2025-04-05 22:05:29,793 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-05 22:05:29,796 - __main__ - INFO - 
+2025-04-05 22:05:29,796 - __main__ - INFO - 当然
+2025-04-05 22:05:29,797 - __main__ - INFO - 可以
+2025-04-05 22:05:29,797 - __main__ - INFO - ！
+2025-04-05 22:05:29,798 - __main__ - INFO - 这是
+2025-04-05 22:05:29,798 - __main__ - INFO - 一个
+2025-04-05 22:05:29,799 - __main__ - INFO - 经典
+2025-04-05 22:05:29,799 - __main__ - INFO - 的
+2025-04-05 22:05:29,800 - __main__ - INFO - 笑
+2025-04-05 22:05:29,974 - __main__ - INFO - 话
+2025-04-05 22:05:29,975 - __main__ - INFO - ：
+
+
+2025-04-05 22:05:29,976 - __main__ - INFO - 有
+2025-04-05 22:05:29,977 - __main__ - INFO - 一天
+2025-04-05 22:05:29,977 - __main__ - INFO - ，一个
+2025-04-05 22:05:29,985 - __main__ - INFO - 番
+2025-04-05 22:05:29,986 - __main__ - INFO - 茄
+2025-04-05 22:05:29,987 - __main__ - INFO - 和
+2025-04-05 22:05:29,987 - __main__ - INFO - 一个
+2025-04-05 22:05:29,988 - __main__ - INFO - 胡
+2025-04-05 22:05:29,988 - __main__ - INFO - 椒
+2025-04-05 22:05:29,989 - __main__ - INFO - 在
+2025-04-05 22:05:29,989 - __main__ - INFO - 马
+2025-04-05 22:05:29,990 - __main__ - INFO - 路
+2025-04-05 22:05:29,992 - __main__ - INFO - 上
+2025-04-05 22:05:29,997 - __main__ - INFO - 走
+2025-04-05 22:05:29,997 - __main__ - INFO - ，
+2025-04-05 22:05:29,998 - __main__ - INFO - 突然
+2025-04-05 22:05:30,139 - __main__ - INFO - 一个
+2025-04-05 22:05:30,140 - __main__ - INFO - 汽车
+2025-04-05 22:05:30,140 - __main__ - INFO - 飞
+2025-04-05 22:05:30,140 - __main__ - INFO - 驰
+2025-04-05 22:05:30,140 - __main__ - INFO - 而
+2025-04-05 22:05:30,141 - __main__ - INFO - 过
+2025-04-05 22:05:30,141 - __main__ - INFO - ，把
+2025-04-05 22:05:30,142 - __main__ - INFO - 番
+2025-04-05 22:05:30,142 - __main__ - INFO - 茄
+2025-04-05 22:05:30,142 - __main__ - INFO - 撞
+2025-04-05 22:05:30,143 - __main__ - INFO - 了
+2025-04-05 22:05:30,143 - __main__ - INFO - 。
+2025-04-05 22:05:30,144 - __main__ - INFO - 胡
+2025-04-05 22:05:30,144 - __main__ - INFO - 椒
+2025-04-05 22:05:30,145 - __main__ - INFO - 见
+2025-04-05 22:05:30,145 - __main__ - INFO - 状
+2025-04-05 22:05:30,146 - __main__ - INFO - ，这
+2025-04-05 22:05:30,147 - __main__ - INFO - 下
+2025-04-05 22:05:30,147 - __main__ - INFO - 可
+2025-04-05 22:05:30,147 - __main__ - INFO - 慌
+2025-04-05 22:05:30,148 - __main__ - INFO - 了
+2025-04-05 22:05:30,148 - __main__ - INFO - ，
+2025-04-05 22:05:30,149 - __main__ - INFO - 赶
+2025-04-05 22:05:30,150 - __main__ - INFO - 紧
+2025-04-05 22:05:30,150 - __main__ - INFO - 说
+2025-04-05 22:05:30,150 - __main__ - INFO - ：“
+2025-04-05 22:05:30,150 - __main__ - INFO - 番
+2025-04-05 22:05:30,151 - __main__ - INFO - 茄
+2025-04-05 22:05:30,158 - __main__ - INFO - ，你
+2025-04-05 22:05:30,159 - __main__ - INFO - 没
+2025-04-05 22:05:30,165 - __main__ - INFO - 事
+2025-04-05 22:05:30,166 - __main__ - INFO - 吧
+2025-04-05 22:05:30,166 - __main__ - INFO - ？”
+2025-04-05 22:05:30,167 - __main__ - INFO -  
+
+
+2025-04-05 22:05:30,167 - __main__ - INFO - 番
+2025-04-05 22:05:30,168 - __main__ - INFO - 茄
+2025-04-05 22:05:30,168 - __main__ - INFO - 一
+2025-04-05 22:05:30,168 - __main__ - INFO - 边
+2025-04-05 22:05:30,168 - __main__ - INFO - 爬
+2025-04-05 22:05:30,169 - __main__ - INFO - 起来
+2025-04-05 22:05:30,169 - __main__ - INFO - ，一
+2025-04-05 22:05:30,169 - __main__ - INFO - 边
+2025-04-05 22:05:30,169 - __main__ - INFO - 说
+2025-04-05 22:05:30,169 - __main__ - INFO - ：“
+2025-04-05 22:05:30,170 - __main__ - INFO - 没
+2025-04-05 22:05:30,170 - __main__ - INFO - 事
+2025-04-05 22:05:30,170 - __main__ - INFO - ，我
+2025-04-05 22:05:30,188 - __main__ - INFO - 只是
+2025-04-05 22:05:30,188 - __main__ - INFO - 被
+2025-04-05 22:05:30,189 - __main__ - INFO - ‘
+2025-04-05 22:05:30,189 - __main__ - INFO - 车
+2025-04-05 22:05:30,189 - __main__ - INFO - ’
+2025-04-05 22:05:30,190 - __main__ - INFO - 了
+2025-04-05 22:05:30,190 - __main__ - INFO - ！”
+2025-04-05 22:05:30,306 - __main__ - INFO -  
+
+
+2025-04-05 22:05:30,307 - __main__ - INFO - 希望
+2025-04-05 22:05:30,307 - __main__ - INFO - 这个
+2025-04-05 22:05:30,307 - __main__ - INFO - 笑
+2025-04-05 22:05:30,307 - __main__ - INFO - 话
+2025-04-05 22:05:30,307 - __main__ - INFO - 能
+2025-04-05 22:05:30,308 - __main__ - INFO - 让
+2025-04-05 22:05:30,308 - __main__ - INFO - 你
+2025-04-05 22:05:30,308 - __main__ - INFO - 笑
+2025-04-05 22:05:30,308 - __main__ - INFO - 出来
+2025-04-05 22:05:30,308 - __main__ - INFO - ！
+2025-04-05 22:05:30,310 - __main__ - INFO - None

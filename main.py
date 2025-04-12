@@ -24,4 +24,4 @@ async def llm_chat():
 
 if __name__ == "__main__":
     logging.config.dictConfig(LOGGING_CONFIG)
-    asyncio.run(run())
+    asyncio.run(llm_chat())

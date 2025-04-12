@@ -3,6 +3,7 @@ from config.enums import InputType, InputFileType
 from config.default import InputDefaults
 
 input_defaults = InputDefaults()
+
 class InputConfig(BaseModel):
     """The default configuration section for Input."""
 

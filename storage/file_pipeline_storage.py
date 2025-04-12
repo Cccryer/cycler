@@ -12,7 +12,7 @@ from aiofiles.os import remove
 from aiofiles.ospath import exists
 
 
-from storage.pipeline_storage import (
+from storage.base.pipeline_storage import (
     PipelineStorage,
     get_timestamp_formatted_with_local_tz,
 )

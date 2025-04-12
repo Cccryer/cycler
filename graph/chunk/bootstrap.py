@@ -6,6 +6,9 @@ warnings.filterwarnings("ignore", message=".*Use no seed for parallelism.*")
 
 initialized_nltk = False
 
+'''
+nltk 初始化 加载语义模型
+'''
 
 def bootstrap():
     """Bootstrap definition."""

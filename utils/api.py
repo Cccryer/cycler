@@ -1,6 +1,6 @@
 from config.model.output_config import OutputConfig
-from storage.pipeline_storage import PipelineStorage
-from storage.factory import StorageFactory
+from storage.base.pipeline_storage import PipelineStorage
+from storage.storage_factory import StorageFactory
 
 def create_storage_from_config(output: OutputConfig) -> PipelineStorage:
     """Create a storage object from the config."""

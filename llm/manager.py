@@ -9,7 +9,10 @@ if TYPE_CHECKING:
 
 
 class ModelManager:
-    """Singleton manager for LLM instances."""
+    """
+        Singleton manager for LLM instances.
+        相比于工厂，此管理类提供命名管理，为模型指定名称
+    """
 
     _instance: ClassVar[ModelManager | None] = None
 

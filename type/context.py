@@ -1,4 +1,4 @@
-from storage.pipeline_storage import PipelineStorage
+from storage.base.pipeline_storage import PipelineStorage
 from dataclasses import dataclass, field
 from typing import Any
 

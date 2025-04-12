@@ -1,6 +1,6 @@
 import pandas as pd
 from io import BytesIO
-from storage.pipeline_storage import PipelineStorage
+from storage.base.pipeline_storage import PipelineStorage
 import logging
 import re
 

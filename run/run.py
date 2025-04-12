@@ -2,7 +2,7 @@ from workflows.create_base_text_unit import run_workflow as create_base_text_uni
 from workflows.create_final_documents import run_workflow as create_final_documents
 from pipeline.factory import PipelineFactory
 import logging
-from storage.input.factory import create_input
+from storage.input.create_input import create_input
 from config.model.input_config import InputConfig
 from utils.api import create_storage_from_config
 from config.model.output_config import OutputConfig
@@ -10,7 +10,7 @@ from type.pipeline import Pipeline
 import pandas as pd
 import time
 import json
-from storage.pipeline_storage import PipelineStorage
+from storage.base.pipeline_storage import PipelineStorage
 from type.context import PipelineRunResult
 from type.context import PipelineRunStats
 from typing import AsyncIterable

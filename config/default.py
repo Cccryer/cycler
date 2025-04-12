@@ -1,8 +1,8 @@
 from dataclasses import dataclass, field
 from config.enums import ChunkStrategyType, OutputType, InputFileType, InputType
 DEFAULT_OUTPUT_BASE_DIR = "output"
-
-
+DEFAULT_CHAT_MODEL_ID = "gpt-4o-mini"
+DEFAULT_ENCODING_MODEL = "text-embedding-3-small"
 @dataclass
 class ChunksDefaults:
 
@@ -40,3 +40,17 @@ class InputDefaults:
     text_column: str = "text"
     title_column: None = None
     metadata: None = None
+
+
+@dataclass
+class ExtractGraphDefaults:
+    """Default values for extracting graph."""
+
+    prompt: None = None
+    entity_types: list[str] = field(
+        default_factory=lambda: ["organization", "person", "geo", "event"]
+    )
+    max_gleanings: int = 1
+    strategy: None = None
+    encoding_model: str = DEFAULT_ENCODING_MODEL
+    model_id: str = DEFAULT_CHAT_MODEL_ID
