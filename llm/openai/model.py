@@ -9,12 +9,14 @@ from utils.thread import run_coroutine_sync
 from openai.types.create_embedding_response import CreateEmbeddingResponse
 from openai.types.chat.chat_completion import ChatCompletion
 from openai.types.chat.chat_completion_chunk import ChatCompletionChunk
-
+import logging
 '''
 1. openai response chat model
 2. openai completion chat model
 3. openai embedding model
 '''
+
+logger = logging.getLogger(__name__)
 
 class OpenAIChatModel(ChatModel):
     def __init__(self, name: str, config: LanguageModelConfig):
@@ -131,6 +133,7 @@ class OpenAICompletionModel(ChatModel):
             "role": "user",
             "content": prompt
         })
+        logger.info(f"messages: {messages}")
         response: ChatCompletion = await self.async_client.chat.completions.create(
             model=self.model,
             messages=messages,

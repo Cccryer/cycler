@@ -9,6 +9,7 @@ from config.model.input_config import InputConfig, InputType
 from graph.chunk.chunker import Chunker
 from config.enums import ChunkStrategyType
 from graph.extract.extractor import GraphExtractor
+from pyvis.network import Network
 
 from graphrag.prompts.index.extract_graph import GRAPH_EXTRACTION_PROMPT
 
@@ -42,7 +43,7 @@ async def llm_chat():
 
 async def test_chunk():
     input_text = await create_input(InputConfig(type=InputType.file, base_dir="input"), root_dir="test")
-    print(input_text)
+    input_text.to_csv('input.csv', index=False, encoding='utf-8')
     chunker = Chunker(
         group_by_columns=["id"],
         size=200,
@@ -68,8 +69,12 @@ async def test_chunk():
         join_descriptions=True
     )
     result = await extractor.extract_from_dataframe(chunks, "text", "id", prompt=GRAPH_EXTRACTION_PROMPT, prompt_variables=prompt_variables)
-    print(result)
-    print
+    result.entities.to_csv('entities.csv', index=False, encoding='utf-8')
+    result.relationships.to_csv('relationships.csv', index=False, encoding='utf-8')
+    net = Network(notebook=True)
+    net.from_nx(result.graph)
+    net.show("graph.html")
+    
 if __name__ == "__main__":
     logging.config.dictConfig(LOGGING_CONFIG)
     asyncio.run(test_chunk())

@@ -55,7 +55,7 @@ class GraphExtractor:
 
     async def extract_from_dataframe(
         self,
-        df: pd.DataFrame,
+        chunks: pd.DataFrame,
         text_column: str,
         id_column: str,
         prompt: str,
@@ -65,7 +65,7 @@ class GraphExtractor:
         # 将DataFrame转换为Document列表
         documents = [
             Document(text=row[text_column], id=str(row[id_column]))
-            for _, row in df.iterrows()
+            for _, row in chunks.iterrows()
         ]
         return await self.extract_from_documents(documents, prompt, prompt_variables)
 
@@ -76,7 +76,7 @@ class GraphExtractor:
         prompt_variables: dict
     ) -> ExtractionResult:
         """从文档列表中提取实体关系"""
-        # 分批处理文档
+        # 分批处理文档，每个document是一个chunk
         batches = [
             documents[i:i + self.batch_size]
             for i in range(0, len(documents), self.batch_size)
@@ -85,9 +85,9 @@ class GraphExtractor:
         # 并发处理每个批次
         all_entities = []
         all_relationships = []
-        
+        # 每个batch有多个Document(chunk)
         for batch in batches:
-            tasks = [self._process_document(doc, prompt, prompt_variables) for doc in batch]
+            tasks = [self._process_document(chunkDoc, prompt, prompt_variables) for chunkDoc in batch]
             batch_results = await asyncio.gather(*tasks, return_exceptions=True)
             
             # 过滤出成功的结果
@@ -123,7 +123,7 @@ class GraphExtractor:
 
     async def _process_document(
         self, 
-        doc: Document,
+        chunkDoc: Document,
         prompt: str,
         prompt_variables: dict
     ) -> tuple[list[dict], list[dict]] | None:
@@ -140,7 +140,7 @@ class GraphExtractor:
             response = await self.model.achat(
                 prompt.format(**{
                     **prompt_variables,
-                    "input_text": doc.text
+                    "input_text": chunkDoc.text
                 })
             )
             results = response.content or ""
@@ -170,6 +170,10 @@ class GraphExtractor:
             relationships = []
             
             for record in results.split("##"):
+                '''
+                ("entity"<|>何家<|>ORGANIZATION<|>何家 is a family that is referenced as having an incident involving the theft of their books by 孔乙己.)
+                ("relationship"<|>孔乙己<|>酒<|>孔乙己 orders alcohol in the shop, indicating his attempts to enjoy life despite his poverty<|>3)
+                '''
                 record = record.strip()
                 if not record:
                     continue
@@ -187,7 +191,7 @@ class GraphExtractor:
                         "title": clean_str(attrs[1].upper()),
                         "type": clean_str(attrs[2].upper()),
                         "description": clean_str(attrs[3]),
-                        "source_id": doc.id
+                        "source_id": chunkDoc.id
                     })
                 elif record_type == '"relationship"' and len(attrs) >= 5:
                     try:
@@ -199,14 +203,14 @@ class GraphExtractor:
                         "source": clean_str(attrs[1].upper()),
                         "target": clean_str(attrs[2].upper()),
                         "description": clean_str(attrs[3]),
-                        "source_id": doc.id,
+                        "source_id": chunkDoc.id,
                         "weight": weight
                     })
 
             return entities, relationships
 
         except Exception as e:
-            log.error(f"处理文档时出错: {e}, 文档ID: {doc.id}")
+            log.error(f"处理文档时出错: {e}, 文档ID: {chunkDoc.id}")
             return None
 
     def _merge_entities(self, entity_dfs: List[pd.DataFrame]) -> pd.DataFrame:
@@ -218,7 +222,7 @@ class GraphExtractor:
             ["title", "type"], sort=False
         ).agg(
             description=("description", list),
-            text_unit_ids=("source_id", list),
+            chunk_ids=("source_id", list),
             frequency=("source_id", "count")
         ).reset_index()
 
@@ -231,7 +235,7 @@ class GraphExtractor:
             ["source", "target"], sort=False
         ).agg(
             description=("description", list),
-            text_unit_ids=("source_id", list),
+            chunk_ids=("source_id", list),
             weight=("weight", "sum")
         ).reset_index()
 
@@ -244,7 +248,7 @@ class GraphExtractor:
                 row["title"],
                 type=row["type"],
                 description=row["description"],
-                source_id=row["text_unit_ids"]
+                source_id=row["chunk_ids"]
             )
 
         for _, row in relationships.iterrows():
@@ -253,7 +257,7 @@ class GraphExtractor:
                 row["target"],
                 weight=row["weight"],
                 description=row["description"],
-                source_id=row["text_unit_ids"]
+                source_id=row["chunk_ids"]
             )
 
         return graph
