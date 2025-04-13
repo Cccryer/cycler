@@ -4,6 +4,7 @@ from enum import Enum
 from typing import Any
 
 import networkx as nx
+import pandas as pd
 
 
 ExtractedEntity = dict[str, Any]
@@ -14,8 +15,7 @@ EntityTypes = list[str]
 
 @dataclass
 class Document:
-    """Document class definition."""
-
+    """文档类型定义"""
     text: str
     id: str
 
@@ -48,3 +48,11 @@ class ExtractEntityStrategyType(str, Enum):
     def __repr__(self):
         """Get a string representation."""
         return f'"{self.value}"'
+
+
+@dataclass
+class ExtractionResult:
+    """提取结果类型定义"""
+    entities: pd.DataFrame
+    relationships: pd.DataFrame
+    graph: nx.Graph

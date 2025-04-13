@@ -1,5 +1,4 @@
-from typing import Any, Generic, TypeVar, Optional
-from abc import abstractmethod
+from typing import Generic, TypeVar, Optional
 
 from pydantic import BaseModel, Field
 
@@ -15,7 +14,7 @@ class ModelResponse(BaseModel, Generic[T]):
     error_message: Optional[str] = Field(None, description="The error message if the response was not successful.")
     content: str = Field(..., description="The content of the response.")
     model: str = Field(..., description="The model used to generate the response.")
-
+    history: list[dict] = Field(..., description="The history of the response.")
     usage: Usage = Field(..., description="The usage of the response.")
 
     raw_response: T = Field(..., description="The raw response from the model.")

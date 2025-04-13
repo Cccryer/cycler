@@ -1,7 +1,7 @@
 from __future__ import annotations
 
 from typing import TYPE_CHECKING, Any, ClassVar
-
+import threading
 from llm.factory import ModelFactory
 
 if TYPE_CHECKING:
@@ -15,7 +15,7 @@ class ModelManager:
     """
 
     _instance: ClassVar[ModelManager | None] = None
-
+    _lock: ClassVar[threading.Lock] = threading.Lock()
     def __new__(cls) -> ModelManager:  # noqa: PYI034: False positive
         """Create a new instance of LLMManager if it does not exist."""
         if cls._instance is None:
@@ -31,8 +31,10 @@ class ModelManager:
 
     @classmethod
     def get_instance(cls) -> ModelManager:
-        """Return the singleton instance of LLMManager."""
-        return cls.__new__(cls)
+        with cls._lock:
+            if cls._instance is None:
+                cls()  # 触发 __new__ 和 __init__
+        return cls._instance
 
     def register_chat(
         self, name: str, model_type: str, **chat_kwargs: Any

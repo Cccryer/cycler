@@ -136,6 +136,13 @@ class OpenAICompletionModel(ChatModel):
             messages=messages,
             **kwargs
         )
+
+        history = []
+        for choice in response.choices:
+            history.append({
+                "role": choice.message.role,
+                "content": choice.message.content
+            })
         return ModelResponse(
             success=True,
             error_message=None,
@@ -146,6 +153,7 @@ class OpenAICompletionModel(ChatModel):
                 output_tokens=response.usage.completion_tokens,
                 total_tokens=response.usage.total_tokens
             ),
+            history=history,
             raw_response=response
         )
 

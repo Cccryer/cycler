@@ -1,0 +1,39 @@
+2025-04-13 17:06:12,031 - asyncio - DEBUG - Using selector: EpollSelector
+2025-04-13 17:06:12,032 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:06:12,032 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:06:12,032 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:06:12,033 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:06:12,035 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:06:12,035 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+                                                text  ...              creation_date
+0  鲁镇的酒店的格局，是和别处不同的：都是当街一个曲尺形的大柜台，柜里面预备着热水，可以随时温酒...  ...  2025-04-13 16:02:25 +0800
+
+[1 rows x 4 columns]
+2025-04-13 17:06:12,045 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-04-13 17:06:12,900 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /deepseek-ai/DeepSeek-V3-0324/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-13 17:06:14,568 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /deepseek-ai/DeepSeek-V3-0324/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-13 17:06:15,329 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /Alibaba-NLP/gte-Qwen2-7B-instruct/resolve/main/tokenizer_config.json HTTP/1.1" 200 0
+2025-04-13 17:06:15,546 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+ExtractionResult(entities=Empty DataFrame
+Columns: []
+Index: [], relationships=Empty DataFrame
+Columns: []
+Index: [], graph=<networkx.classes.graph.Graph object at 0x7fce9c6fb250>)

@@ -4,7 +4,8 @@ from config.model.input_config import InputConfig
 from storage.base.pipeline_storage import PipelineStorage
 import re
 from typing import Callable, Dict
-
+from utils.hashing import gen_sha512_hash
+from pathlib import Path
 logger = logging.getLogger(__name__)
 
 '''
@@ -31,10 +32,11 @@ async def load_file(
     path: str,
     storage: PipelineStorage,
     config: InputConfig,
+    group: dict | None = None
 ) -> pd.DataFrame:
     """加载单个文件"""
     loader = get_loader(config.file_type)
-    return await loader(path, storage, config)
+    return await loader(path, storage, config, group)
 
 async def load_files(
     config: InputConfig,
@@ -56,7 +58,7 @@ async def load_files(
 
     for file, group in files:
         try:
-            df = await load_file(file, storage, config)
+            df = await load_file(file, storage, config, group)
             # 添加分组信息
             for key, value in group.items():
                 df[key] = value
@@ -81,16 +83,36 @@ async def load_csv_file(
     path: str,
     storage: PipelineStorage,
     config: InputConfig,
+    group: dict | None = None
 ) -> pd.DataFrame:
     """加载CSV文件"""
     content = await storage.get(path, encoding=config.encoding)
     return pd.read_csv(pd.StringIO(content))
+
+
+@register_loader("txt")
+async def load_txt_file(
+    path: str,
+    storage: PipelineStorage,
+    config: InputConfig,
+    group: dict | None = None
+) -> pd.DataFrame:
+    """加载TXT文件"""
+    if group is None:
+        group = {}
+    content = await storage.get(path, encoding=config.encoding)
+    new_item = {**group, "text": content}
+    new_item["id"] = gen_sha512_hash(new_item, new_item.keys())
+    new_item["title"] = str(Path(path).name)
+    new_item["creation_date"] = await storage.get_creation_date(path)
+    return pd.DataFrame([new_item])
 
 @register_loader("json")
 async def load_json_file(
     path: str,
     storage: PipelineStorage,
     config: InputConfig,
+    group: dict | None = None 
 ) -> pd.DataFrame:
     """加载JSON文件"""
     content = await storage.get(path, encoding=config.encoding)

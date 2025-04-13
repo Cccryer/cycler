@@ -1,694 +1,668 @@
-2025-04-05 16:06:48,615 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:06:48,616 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:17:47,404 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:17:47,407 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:20:33,027 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:20:33,027 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:23:08,282 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:23:08,282 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:23:08,283 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 16:23:08,283 - storage.file_pipeline_storage - INFO - total files: 0
-2025-04-05 16:24:00,864 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:24:00,865 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:24:00,865 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 16:24:00,865 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 16:24:00,867 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 16:24:00,868 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 16:24:00,868 - __main__ - INFO - Running standard indexing.
-2025-04-05 16:25:06,604 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:25:06,604 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:25:06,604 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 16:25:06,605 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 16:25:06,606 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 16:25:06,607 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 16:25:06,607 - __main__ - INFO - Running standard indexing.
-2025-04-05 16:25:06,607 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 16:26:07,267 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:26:07,267 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:26:07,268 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 16:26:07,268 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 16:26:07,269 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 16:26:07,270 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 16:26:07,270 - __main__ - INFO - Running standard indexing.
-2025-04-05 16:26:07,270 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 16:26:07,270 - __main__ - ERROR - error running workflow starting documents
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 70, in _run_pipeline
-    await _dump_json(context)
-  File "/home/fucker/aai/cycler/main.py", line 42, in _dump_json
-    "stats.json", json.dumps(asdict(context.stats), indent=4, ensure_ascii=False)
-AttributeError: 'PipelineRunContext' object has no attribute 'stats'. Did you mean: 'state'?
-2025-04-05 16:32:48,125 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 16:32:59,579 - storage.input.factory - INFO - using file storage for input
-2025-04-05 16:35:01,221 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 16:35:18,853 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 16:35:45,471 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 16:36:00,245 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 16:36:21,852 - __main__ - INFO - Running standard indexing.
-2025-04-05 16:37:12,358 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:08:18,925 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:08:18,926 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:08:18,926 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:08:18,926 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:08:18,930 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:08:18,931 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:08:18,931 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:08:18,931 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:08:18,976 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:08:19,029 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 30, in run_workflow
-    context.callbacks,
-AttributeError: 'PipelineRunContext' object has no attribute 'callbacks'
-2025-04-05 17:08:43,872 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:08:43,872 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:08:43,873 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:08:43,874 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:08:43,880 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:08:43,881 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:08:43,881 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:08:43,883 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:10:22,449 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:10:43,195 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 30, in run_workflow
-    context.callbacks,
-AttributeError: 'PipelineRunContext' object has no attribute 'callbacks'
-2025-04-05 17:11:25,493 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:11:25,493 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:11:25,493 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:11:25,493 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:11:25,497 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:11:25,497 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:11:25,497 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:11:25,498 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:11:25,510 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:11:25,530 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 68, in create_base_text_units
-    if len(group_by_columns) > 0
-TypeError: object of type 'FieldInfo' has no len()
-2025-04-05 17:11:48,867 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:11:48,868 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:11:48,868 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:11:48,869 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:11:48,874 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:11:48,875 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:11:48,875 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:11:48,878 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:12:17,053 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:12:51,605 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 68, in create_base_text_units
-    if len(group_by_columns) > 0
-TypeError: object of type 'FieldInfo' has no len()
-2025-04-05 17:40:18,864 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:40:18,864 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:40:18,864 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:40:18,865 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:40:18,868 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:40:18,868 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:40:18,868 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:40:18,869 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:40:18,919 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:40:20,051 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
-    response.raise_for_status()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
+2025-04-13 16:02:32,032 - storage.input.create_input - INFO - loading input from root_dir=test
+2025-04-13 16:02:32,032 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:02:32,034 - storage.file_pipeline_storage - INFO - search input/test for files matching 
+2025-04-13 16:02:32,035 - storage.file_pipeline_storage - INFO - total files: 0
+2025-04-13 16:03:00,121 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:03:00,121 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:03:00,121 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:03:00,121 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:03:00,121 - storage.file_loader.file_loader - WARNING - Warning! Error loading file input.txt. Skipping...
+2025-04-13 16:03:00,122 - storage.file_loader.file_loader - WARNING - Error: 未注册的文件类型: text
+2025-04-13 16:03:00,122 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.text files, loading 0
+2025-04-13 16:06:08,757 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:06:08,757 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:06:08,757 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:06:08,757 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:06:08,757 - storage.file_loader.file_loader - WARNING - Warning! Error loading file input.txt. Skipping...
+2025-04-13 16:06:08,758 - storage.file_loader.file_loader - WARNING - Error: 未注册的文件类型: text
+2025-04-13 16:06:08,758 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.text files, loading 0
+2025-04-13 16:12:13,385 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:12:13,385 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:12:13,386 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:12:13,386 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:12:13,386 - storage.file_loader.file_loader - WARNING - Warning! Error loading file input.txt. Skipping...
+2025-04-13 16:12:13,386 - storage.file_loader.file_loader - WARNING - Error: 未注册的文件类型: text
+2025-04-13 16:12:13,386 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.text files, loading 0
+2025-04-13 16:14:32,655 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:14:32,655 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:14:32,655 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:14:32,655 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:14:32,658 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:14:32,659 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:16:00,678 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:16:00,678 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:16:00,678 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:16:00,678 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:16:00,680 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:16:00,680 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:23:46,254 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:23:46,254 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:23:46,255 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:23:46,255 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:23:46,258 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:23:46,258 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:24:29,128 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:24:29,128 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:24:29,128 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:24:29,128 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:24:29,131 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:24:29,131 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:24:57,684 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:24:57,684 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:24:57,684 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:24:57,684 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:24:57,686 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:24:57,686 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:25:58,363 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:25:58,364 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:25:58,364 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:25:58,364 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:25:58,367 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:25:58,367 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:28:15,380 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:28:15,381 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:28:15,381 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:28:15,381 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:28:15,384 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:28:15,384 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:41:48,710 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:41:48,710 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:41:48,710 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:41:48,711 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:41:48,713 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:41:48,714 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:45:05,546 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:45:05,546 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:45:05,547 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:45:05,547 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:45:05,549 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:45:05,549 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:45:37,300 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:45:37,300 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:45:37,300 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:45:37,301 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:45:37,303 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:45:37,303 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 16:57:21,334 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 16:57:21,334 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 16:57:21,335 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 16:57:21,335 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 16:57:21,337 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 16:57:21,338 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:02:38,643 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:02:38,643 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:02:38,643 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:02:38,644 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:02:38,647 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:02:38,647 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:02:48,521 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:02:48,522 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+2025-04-13 17:06:12,032 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:06:12,032 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:06:12,032 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:06:12,033 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:06:12,035 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:06:12,035 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:06:15,546 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:06:15,547 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:06:15,548 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+2025-04-13 17:07:14,616 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:07:14,616 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:07:14,616 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:07:14,617 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:07:14,619 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:07:14,620 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:07:18,149 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:07:18,150 - graph.extract.extractor - ERROR - 处理文档时出错: 'tuple_delimiter', 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+2025-04-13 17:41:44,952 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:41:44,953 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:41:44,953 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:41:44,954 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:41:44,958 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:41:44,958 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:41:48,202 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:41:48,203 - graph.extract.extractor - ERROR - 处理文档时出错: 'input_text', 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+2025-04-13 17:43:56,499 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:43:56,500 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:43:56,500 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:43:56,500 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:43:56,502 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:43:56,502 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:44:03,481 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:03,487 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...款<|>7)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:44:03,657 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:03,661 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...ons<|>3)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:44:03,765 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:03,768 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...ers<|>6)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:44:03,981 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:03,984 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...em.<|>7)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:44:03,996 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:03,998 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...<|>7) ##\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:44:04,140 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:04,144 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...柜<|>4)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:44:04,172 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:04,175 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...<|>7)  \n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:44:04,772 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:04,775 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...比<|>2)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:44:05,639 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:05,643 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...are<|>5)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:44:07,948 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:07,952 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...dge<|>3)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:44:10,366 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:10,368 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...hem<|>7)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:44:10,469 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:10,471 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...ine<|>6)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:44:11,094 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:11,098 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...ate<|>3)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+2025-04-13 17:44:11,570 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:11,571 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...rative.)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:44:12,061 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:12,065 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...。<|>8)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:44:12,211 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:12,213 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...。<|>7)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:44:12,513 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:12,517 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co...te<|>4) \n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:44:14,244 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:14,248 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co... to<|>4)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:44:15,375 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:44:15,376 - graph.extract.extractor - ERROR - 处理文档时出错: 1 validation error for ModelResponse
+history.0
+  Input should be a valid string [type=string_type, input_value={'role': 'assistant', 'co....<|>3)\n<|COMPLETE|>'}, input_type=dict]
+    For further information visit https://errors.pydantic.dev/2.11/v/string_type, 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:46:50,359 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:46:50,359 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:46:50,359 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:46:50,360 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:46:50,361 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:46:50,362 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:46:57,049 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:57,054 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个常常饮酒的人，品行优良，但偶尔会偷窃，且有喝酒的坏脾气。)
+##
+("relationship"<|>孔乙己<|>店<|>孔乙己在店里消费，但他有时没有现钱，需要记账。<|>6)
+<|COMPLETE|>
+2025-04-13 17:46:57,054 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 3387e7eea41b14795ef4857993878b286f286ad6efa2cc491ce0438bc4a7cb36a41832242d1811db53cf2a7be598807b6278b635a06af6a07b56117edf1a6cd0
+2025-04-13 17:46:57,088 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:57,089 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who used to study but ended up poor and struggling to make a living, known for writing well but having a bad temper and a tendency to drink too much and be lazy.)
+##
+("relationship"<|>孔乙己<|>店<|>孔乙己 often does work in the store to exchange writing for food, showcasing a relationship with labor and assistance<|>7)
+<|COMPLETE|>
+2025-04-13 17:46:57,090 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 53354f22a511314881f54ec8068081b27062143858d5dd2e9d82f59f6cc2a5f00de468d68fd6a15d7a335b7d8bb237b1ddd85c8c88c6d31b1824ded1deb06fa2
+2025-04-13 17:46:57,214 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:57,216 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who interacts with the shopkeeper and children, showing his knowledge of writing and literacy despite his circumstances.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the shopkeeper who asks孔乙己 questions and engages in light-hearted interactions with him.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己 engages in conversation with the shopkeeper and reflects on social status and literacy<|>4)
+<|COMPLETE|>
+2025-04-13 17:46:57,217 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 99f0cdea53a856f4940f0328ae83033c8426bade50365b2a8c9bf983536daad6b50d197d7159b19285ca2cc85e831deed6cb80d93a6d01944380ce324f29e0d9
+2025-04-13 17:46:57,519 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:57,521 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who is often mocked and is known for his peculiar behavior and appearance, frequently touching on the theme of theft related to books.)
+##
+("entity"<|>酒家<|>ORGANIZATION<|>The wine shop where the interactions involving 孔乙己 take place, serving as a social gathering point for locals.)
+##
+("relationship"<|>孔乙己<|>酒家<|>孔乙己 is a frequent patron of the wine shop, creating numerous interactions that characterize the social environment around him.<|>7)
+<|COMPLETE|>
+2025-04-13 17:46:57,522 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: e454d07b078c100909f01c35ece6768a633693ec5c6542752fa9d841f09ac4991d5303590e48ba48a13f90d1e229b337f5944a5d94be2515d44cb78f67476251
+2025-04-13 17:46:57,617 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:57,620 - graph.extract.extractor - INFO - results: ("entity"<|>咸亨酒店<|>ORGANIZATION<|>咸亨酒店是一家提供黄酒和菜肴的餐馆，吸引长衫顾客，提供饮食服务)
+##
+("entity"<|>我<|>PERSON<|>我是一名从十二岁起在咸亨酒店工作的伙计，负责温酒的职位)
+##
+("relationship"<|>我<|>咸亨酒店<|>我在咸亨酒店工作，负责温酒<|>8)
+<|COMPLETE|>
+2025-04-13 17:46:57,621 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 6f52b57828b286a98a8f3ff0c084ee927f40cdfaa2458bf3429cd5ddf9322ee389228c62c5e4a408016221c08e163541a65af2af6ea91ff6706b034642d5ae87
+2025-04-13 17:46:57,728 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:57,731 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一位穿长衫的顾客，他身材高大，青白色的脸上有皱纹和伤痕，留着花白的胡子。他在酒馆里喝酒，常用古文说话。)
+##
+("relationship"<|>孔乙己<|>酒馆<|>孔乙己是一位在酒馆喝酒的常客，引起其他人的注意和笑声。<|>7)
+<|COMPLETE|>
+2025-04-13 17:46:57,732 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 604b963b71f517eeddfec626b830ffd33ea95e9e73114849a66b4339bf80e9a7fb5469e6dac67e59de48adb9c5cae6c9d925df2c1f536d55e3d8bb172ad8eba2
+2025-04-13 17:46:58,288 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:58,289 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who stands while drinking alcohol, known for wearing a long gown and having a tall stature with a pale face and wrinkles, often accompanied by scars and a messy beard.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the tavern keeper, characterized by a fierce demeanor and a strict personality towards customers, managing the alcohol service in the tavern.)
+##
+("entity"<|>柜台<|>GEO<|>柜台 is the bar counter where alcohol is served, indicating the setting of the interactions between characters.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己 interacts with the tavern keeper, who oversees his drinking habits and often embodies sternness in the tavern<|>6)
+##
+("relationship"<|>孔乙己<|>柜台<|>孔乙己 stands at the counter while drinking, highlighting his social interaction space within the tavern<|>7)
+<|COMPLETE|>
+2025-04-13 17:46:58,289 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: c82382ede816a76ba6b863c727b0e290d4c5b4e9341a101f62ac7c9b399ad370a407b618ffe9ef942b267e27a110455ef5567f3cee8af08d81b8170702646bd6
+2025-04-13 17:46:58,313 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:46:58,315 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who has a proud demeanor but struggles with social interactions and knowledge among others at the tavern.)
+##
+("entity"<|>酒<|>EVENT<|>The act of drinking alcohol at the tavern, which is a social activity that plays a central role in the interactions and atmosphere.)
+##
+("entity"<|>店<|>ORGANIZATION<|>The tavern where the characters interact, providing a setting for social gatherings and cultural exchanges.)
+##
+("relationship"<|>孔乙己<|>店<|>孔乙己 frequently visits the tavern, leading to interactions with other characters<|>7)
+##
+("relationship"<|>酒<|>店<|>The tavern serves alcohol, which is central to the social activities taking place within<|>8)
+##
+("relationship"<|>孔乙己<|>酒<|>孔乙己 partakes in drinking alcohol during social gatherings, impacting his interactions<|>5)
+<|COMPLETE|>
+2025-04-13 17:46:58,315 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: a691ad3c2207f9cf32c2f483dd7a13f7e8ad82594976493adc71ceae8e9af9b201eaaa8b61fe619a40ecd043d301a212bb5dccc8cb168bcc9b4b0ff2efd03063
+2025-04-13 17:47:01,077 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:01,078 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个受过教育但未能继续学业、逐渐陷入贫困的读书人，他以替人抄书换取食物。)
+##
+("entity"<|>何家<|>PERSON<|>何家是一个与孔乙己发生冲突的家庭，孔乙己被指控偷了他们的书。)
+##
+("entity"<|>酒馆<|>ORGANIZATION<|>酒馆是众人聚集的地方，在其中发生了关于孔乙己的争论和戏弄。)
+##
+("relationship"<|>孔乙己<|>何家<|>孔乙己被指控偷了何家的书，导致了他与众人的口舌之争。<|>7)
+##
+("relationship"<|>孔乙己<|>酒馆<|>孔乙己在酒馆里与其他人发生了争论，是事件的中心人物。<|>5)
+##
+("relationship"<|>何家<|>酒馆<|>何家因指控孔乙己而成为酒馆讨论的对象。<|>4)
+<|COMPLETE|>
+2025-04-13 17:47:01,078 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 233d26b5dcc99c1a0f2e32b645044ea010db3aa137b01d1ab2a639319760cae5e513c8d94a49f3227223d58154d17a4d7d0db9e97f0295bb185f2a8bebfffbcf
+2025-04-13 17:47:01,410 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:01,414 - graph.extract.extractor - INFO - results: ("entity"<|>鲁镇<|>GEO<|>鲁镇 is a location with distinct hotel layouts and a culture around local drinking establishments)
+##
+("entity"<|>咸亨酒店<|>ORGANIZATION<|>咸亨酒店 is a local hotel where the narrator worked as a servant, serving customers primarily wearing short clothing)
+##
+("entity"<|>长衫<|>PERSON<|>长衫 refers to customers who are more affluent and may order food and drink inside the establishment compared to the short shirt customers)
+##
+("entity"<|>短衣帮<|>PERSON<|>短衣帮 refers to the generally less affluent customers who stand outside the hotel and drink less expensive options)
+##
+("relationship"<|>鲁镇<|>咸亨酒店<|>咸亨酒店 operates within 鲁镇, serving local clientele<|>5)
+##
+("relationship"<|>咸亨酒店<|>短衣帮<|>短衣帮 customers often buy cheaper drinks at 咸亨酒店, representing a key customer segment<|>7)
+##
+("relationship"<|>咸亨酒店<|>长衫<|>长衫 customers are more likely to spend more and dine inside 咸亨酒店 compared to 短衣帮<|>8)
+<|COMPLETE|>
+2025-04-13 17:47:01,414 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 22280f1a51300e1b08f022cf01e4283d0b7f85d86e51750243411873e0858a99869d201c8154f9a158281e76a90292711063ae120d8789223d93de0009c472f4
+2025-04-13 17:47:05,340 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:05,344 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who is depicted as pleading for the ability to write and is involved in a conversation about writing and bookkeeping.)
+##
+("relationship"<|>孔乙己<|>的教导<|>孔乙己 is trying to teach the narrator about writing and its importance for future responsibilities<|>6)
+<|COMPLETE|>
+2025-04-13 17:47:05,345 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 2eed7e43b313afad02fa58ae354f01e3f972d61b1673d24c3bc09552e530ca82c04828a5cbe3e14d9a058ee9feaf27593df64fec1695759caf2a6c5ac70caeb4
+2025-04-13 17:47:05,390 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:05,392 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character known for his interactions with children and his eccentric behavior, which includes engaging in conversations about writing symbols and sharing beans with neighbors.)
+##
+("entity"<|>邻居<|>PERSON<|>Neighbors who interacted with 孔乙己 and were entertained by his actions and stories.)
+##
+("relationship"<|>孔乙己<|>邻居<|>孔乙己 provides entertainment and shares beans with the neighbors, forming a social connection<|>7)
+<|COMPLETE|>
+2025-04-13 17:47:05,392 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: bb7755e2173d1d234ba1de8911ee95ebd1f1f380d10d940bd89fc9a5e3b0f353b19175c81dcd8e0b697d76fd06598517f607f17c096e9150aaabdec2f61a54b5
+2025-04-13 17:47:05,464 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:05,465 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个常常向掌柜借酒但又未能偿还的人物，最终在年关时被认为已经去世。)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜是酒馆的老板，负责向孔乙己提供酒水并记录借款。)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己是向掌柜借酒并未偿还欠款的人物，且两者有明显的交互关系。<|>8)
+##
+<|COMPLETE|>
+2025-04-13 17:47:05,465 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 850381178be5910e1bd95fe94187f0d9cc90186c2f9e9727a2aa1c5f2af9c2dee3ce6b9770c13ca2268a6ef07e9b925cfdb0a85430df611dccfa19fdf02e7a68
+2025-04-13 17:47:05,481 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:05,482 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character depicted as being downcast, having a thin and dark appearance, wearing tattered clothes, and sitting under a counter, reflecting a sense of despair and desperation in his situation.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the shopkeeper interacting with孔乙己, known for recognizing him and inquiring about his debts and actions.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己 is in debt to the shopkeeper and they have an established relationship from past interactions regarding borrowing and repayment<|>7)
+<|COMPLETE|>
+2025-04-13 17:47:05,482 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 5a18bcf490dc85fb84696be993706df15fff30c1d3e806e0c47063cdc27ac53fb3fe95ec28f1b10f4a2e09ba5faf3c1bee796f23192609316a7b8c4b04f39e28
+2025-04-13 17:47:05,851 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:05,853 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个瘦黑且破旧的角色，常来酒馆，面容憔悴，穿着破夹袄，身上挂着草绳，表示他的经济困境)
+##
+("entity"<|>酒馆<|>ORGANIZATION<|>酒馆是孔乙己寻求温酒的地方，显示出他的孤独和经济窘迫)
+##
+("relationship"<|>孔乙己<|>酒馆<|>孔乙己常常来酒馆要求温酒，反映他的生活状态和与酒馆的互动<|>7)
+<|COMPLETE|>
+2025-04-13 17:47:05,853 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 9dfed49b78960da82f3491aca3ff85cc30e10281191cf886c9dfb450e804bb6cba7ed88d1d3b67220ee9d9e1873f6e6c9968ecd45f34d530c3631bcfd5d65296
+2025-04-13 17:47:06,155 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:06,160 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who appears to be destitute and is known for his unfortunate circumstances, including stealing, which leads to mockery from the innkeeper and others around him.)
+##
+("entity"<|>掌柜<|>PERSON<|>The innkeeper is a character who interacts with 孔乙己, often making light of his situation and serving him alcohol.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己 is often served alcohol by the innkeeper and is mocked for his thefts, highlighting their relationship as one of patron and destitute customer.<|>6)
+<|COMPLETE|>
+2025-04-13 17:47:06,161 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 14c96846954b1d42a088feced9f92af472d368bbe83da7a67cc7948115d5fc80633e473c56c3bb1426087ee6dc89139a03b9d92ee4bf5adf3581ef79eddc91ec
+2025-04-13 17:47:06,184 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:06,185 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个长期未出现的人，似乎因偷窃而受到伤害，可能已经受伤或死去)
+##
+("entity"<|>丁举人<|>PERSON<|>丁举人是孔乙己偷窃的目标，其家中物品受到影响)
+##
+("entity"<|>中秋<|>EVENT<|>中秋是中国的传统节日，文中提到在此节日之前的情境)
+##
+("relationship"<|>孔乙己<|>丁举人<|>孔乙己因偷窃而与丁举人产生了直接关系，导致其受伤<|>7)
+<|COMPLETE|>
+2025-04-13 17:47:06,185 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 5a0b6fa671a4525012f3074937dd014b31cd9ea920a81c7cbd7e72cf20cff194a7407a021b3a20143ba673572fcf33ec4b5c36c622c206766b53ba48d8bd8b61
+2025-04-13 17:47:07,161 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:07,165 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who brings joy to children but has not been around for a while, leading to discussions about his absence and past actions.)
+##
+("entity"<|>中秋<|>EVENT<|>中秋 refers to the Mid-Autumn Festival, a significant cultural event mentioned in relation to the timing of the story.)
+##
+("entity"<|>丁举人<|>PERSON<|>丁举人 is a person whose household was involved in an incident related to孔乙己's past actions.)
+##
+("relationship"<|>孔乙己<|>丁举人<|>孔乙己 allegedly stole from 丁举人, leading to concern about his behavior and consequences<|>7)
+##
+("relationship"<|>孔乙己<|>中秋<|>孔乙己's absence coincides with the Mid-Autumn Festival, a time of celebration and family gatherings<|>3)
+<|COMPLETE|>
+2025-04-13 17:47:07,166 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: a480844dc527f41fcd39f220919dbf6402fc228fb0318545bf9070fde6a6d467bf205e6cb8f461f424e6ebd0b4c0dd4badd8ae5983b1f88aca0c4cc03b28c7bc
+2025-04-13 17:47:07,843 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:47:07,847 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个未能还清债务的人物，反映出其困境和最终死亡的状态。)
+##
+("entity"<|>端午<|>EVENT<|>端午节是一个传统的中国节日，此处提到与孔乙己的债务相关。)
+##
+("entity"<|>中秋<|>EVENT<|>中秋节是另一个中国传统节日，此处提到但与孔乙己的故事没有具体关联。)
+##
+("entity"<|>年关<|>EVENT<|>年关是指农历新年之前的时节，此处提到但与孔乙己的故事没有具体关联。)
+##
+("relationship"<|>孔乙己<|>端午<|>孔乙己在端午节时提到自己仍然欠债，显示其经济困境。<|>8)
+##
+("relationship"<|>孔乙己<|>中秋<|>虽然提到中秋节，但孔乙己在此节日没有具体的行为或事件。<|>1)
+##
+("relationship"<|>孔乙己<|>年关<|>在年关时没有再次看到孔乙己，暗示其可能已不在世。<|>7)
+<|COMPLETE|>
+2025-04-13 17:47:07,848 - graph.extract.extractor - ERROR - 处理文档时出错: AsyncCompletions.create() got an unexpected keyword argument 'name', 文档ID: 76cd1006ee19440e935035dd09dc14c2589ccba61da123e7708dd044d833c70eec79b68bf756aa3bbecc8421721d85690c363600978926fb3870e172627a15b4
+2025-04-13 17:53:40,250 - storage.input.create_input - INFO - loading input from root_dir=input
+2025-04-13 17:53:40,250 - storage.input.create_input - INFO - using file storage for input
+2025-04-13 17:53:40,251 - storage.file_pipeline_storage - INFO - search test/input for files matching 
+2025-04-13 17:53:40,251 - storage.file_pipeline_storage - INFO - total files: 1
+2025-04-13 17:53:40,254 - storage.file_loader.file_loader - INFO - Found 1 InputFileType.txt files, loading 1
+2025-04-13 17:53:40,254 - storage.file_loader.file_loader - INFO - Total number of unfiltered txt rows: 1
+2025-04-13 17:53:45,924 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:45,933 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who struggles with bad habits and has fallen into stealing due to his inability to find regular work, though he maintains a reputation for honesty while owing money to a shopkeeper.)
+##
+("relationship"<|>孔乙己<|>店<|>孔乙己 frequents a shop where he often interacts with the staff and patrons, demonstrating his need for socialization despite his troubled life.<|>7)
+<|COMPLETE|>
+2025-04-13 17:53:46,190 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,194 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character known for being the subject of ridicule and discussion among patrons at a tavern, often associated with having new scars and being accused of theft, especially regarding books.)
+##
+("relationship"<|>孔乙己<|>酒客<|>孔乙己 is often laughed at and commented on by the other drinkers in the tavern, suggesting a social relationship characterized by mockery<|>7)
+<|COMPLETE|>
+2025-04-13 17:53:46,326 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,330 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who read books but did not pursue formal education; he ended up poor and occasionally resorted to stealing but had a good moral character in comparison to others in the shop, often settling his debts.)  
+##
+("relationship"<|>孔乙己<|>店<|>孔乙己 frequently visited the shop and was known for his writing skills, exchanging writing for food<|>6)  
+<|COMPLETE|>
+2025-04-13 17:53:46,341 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,342 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who appears to be less educated and interacts with children and the shopkeeper in a humorous way, reflecting on literacy and social class.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the shopkeeper who interacts with 孔乙己 and is involved in the humorous exchange regarding literacy.)
+<|COMPLETE|>
+2025-04-13 17:53:46,582 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,586 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character known for his lack of success in academic examinations, often seen drinking and interacting with others in a lively atmosphere.)
+##
+("entity"<|>店家<|>ORGANIZATION<|>The store is where the interactions between characters take place, showcasing various social exchanges and humor.)
+##
+("relationship"<|>孔乙己<|>店家<|>孔乙己 often engages with the store owner and patrons, highlighting the comedic elements of his character<|>7)
+<|COMPLETE|>
+2025-04-13 17:53:46,594 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,596 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个经常到店里喝酒的人，身材高大，穿着长衫，面色青白，脸上有皱纹和伤痕，留着杂乱的花白胡子。)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜是酒馆的老板，性格严厉，经常显得面孔凶狠，不太善待客人。)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己常常在酒馆里喝酒，而掌柜则是在酒馆中负责管理的人，两者之间存在买卖顾客关系<|>7)
+<|COMPLETE|>
+2025-04-13 17:53:46,723 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,727 - graph.extract.extractor - INFO - results: ("entity"<|>咸亨酒店<|>ORGANIZATION<|>咸亨酒店是镇口的一家酒馆，主要接待顾客，提供酒水和菜肴。)
+##
+("entity"<|>我<|>PERSON<|>我从十二岁起在咸亨酒店当伙计，负责温酒这一职务。)
+##
+("relationship"<|>我<|>咸亨酒店<|>我在咸亨酒店工作，负责服务顾客和温酒<|>8)
+<|COMPLETE|>
+2025-04-13 17:53:46,889 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:46,891 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a tall man with a pale complexion and often has visible scars; he wears a dirty and torn long gown and is known for speaking in an archaic manner that puzzles others. He frequents a local tavern where he stands and drinks.) 
+##
+("entity"<|>酒馆<|>ORGANIZATION<|>The tavern is a place where patrons gather to drink, and it becomes a lively spot when孔乙己 arrives, often drawing attention and laughter from other customers.) 
+##
+("relationship"<|>孔乙己<|>酒馆<|>孔乙己 is a regular patron at the tavern, who elicits laughter and attention from the other customers when he arrives<|>7) 
+<|COMPLETE|>
+2025-04-13 17:53:47,811 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:47,813 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who has read books but has not made a living through education, ultimately leading him to poverty and desperation, often arguing for the value of knowledge.)  
+##  
+("entity"<|>何家<|>PERSON<|>何家 is referenced as the owner of the book that孔乙己 allegedly stole, demonstrating social conflict surrounding the act of reading and education in a poor context.)  
+##  
+("entity"<|>快活的空气<|>EVENT<|>快活的空气 describes the lively and humorous atmosphere created by the people's ridicule towards孔乙己, which reveals the societal attitudes toward knowledge and poverty.)  
+##  
+("relationship"<|>孔乙己<|>何家<|>孔乙己 is accused of stealing a book from何家, which showcases the conflict between individuals in a society and the perceived value of education.<|>7)  
+##  
+("relationship"<|>孔乙己<|>快活的空气<|>The atmosphere of humor and ridicule surrounding孔乙己 indicates societal attitudes toward his character and situation.<|>6)  
+<|COMPLETE|>  
+2025-04-13 17:53:47,971 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:47,972 - graph.extract.extractor - INFO - results: ("entity"<|>鲁镇<|>GEO<|>鲁镇 is a location known for its unique hotel layout and local drinking culture.)
+##
+("entity"<|>咸亨酒店<|>ORGANIZATION<|>咸亨酒店 is a tavern in 鲁镇 where patrons can enjoy drinks and food at different price points.)
+##
+("entity"<|>长衫<|>PERSON<|>长衫 refers to individuals wearing long gowns, indicating a certain social status in 鲁镇.)
+##
+("entity"<|>短衣<|>PERSON<|>短衣 refers to individuals wearing short coats, typically of lower socioeconomic status in 鲁镇.)
+##
+("relationship"<|>咸亨酒店<|>鲁镇<|>咸亨酒店 is located in 鲁镇, providing services to its residents.<|>7)
+##
+("relationship"<|>长衫<|>短衣<|>长衫 and 短衣 represent different social classes within 鲁镇's local community.<|>5)
+##
+("relationship"<|>咸亨酒店<|>长衫<|>长衫 customers are more likely to dine in the sit-down area of 咸亨酒店 compared to 短衣 customers.<|>6)
+##
+("relationship"<|>咸亨酒店<|>短衣<|>短衣 customers usually stand outside and order simpler, cheaper items at 咸亨酒店.<|>6)
+<|COMPLETE|>
+2025-04-13 17:53:50,266 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:50,452 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:51,256 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:51,398 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:51,448 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:52,129 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:52,134 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:52,187 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:52,750 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:53,310 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:56,893 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:56,894 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who is often seen teaching others about writing and maintaining accounts, reflecting on social status and interactions with shopkeepers.)
+##
+("relationship"<|>孔乙己<|>无<|>孔乙己 displays characteristics of a mentor by trying to teach the narrator about writing and managing accounts despite indifference<|>3)
+<|COMPLETE|>
+2025-04-13 17:53:57,178 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:57,180 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是故事中的主要人物，他被描绘为一个欠债未还且最终可能死去的人物)
+##
+("relationship"<|>孔乙己<|>未还钱<|>孔乙己被提及为欠债十九个钱，显示他在经济上处于困境之中<|>7)
+<|COMPLETE|>
+2025-04-13 17:53:57,195 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:57,196 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是故事中的一个人物，黑瘦，穿着破夹袄，常坐在柜台下，表情凄凉，常向掌柜要酒。)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜是经营酒家的商人，与孔乙己有顾客关系，提醒孔乙己欠钱。)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己是酒家的常客，向掌柜请求温酒，同时被提醒欠款<|>6)
+<|COMPLETE|>
+2025-04-13 17:53:57,338 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:57,339 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个常常被掌柜取笑的年轻人，因偷东西而受到了惩罚。他低声承认自己跌断了腿，并谦求掌柜不要提及此事。")
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜是经营酒馆的人，经常与孔乙己互动，并对他表示嘲笑和关心。")
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己常常到掌柜的酒馆，虽然掌柜取笑他，但他们之间有一种复杂的互动关系<|>6)
+<|COMPLETE|>
+2025-04-13 17:53:57,543 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:57,546 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己是一个引人入胜的人物，以其特殊的个性和幽默感在酒馆中吸引了周围的孩子，对他的言行产生影响。)
+##
+("entity"<|>邻居孩子<|>PERSON<|>邻居的孩子们被孔乙己的幽默和友善所吸引，他们围住孔乙己共享快乐。)
+##
+("relationship"<|>孔乙己<|>邻居孩子<|>孔乙己与孩子们之间的互动使他们快乐，孩子们通过他分享食物和笑声<|>8)
+<|COMPLETE|>
+2025-04-13 17:53:58,204 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:58,208 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who often frequents a tavern, known for being in debt and for his distinctive mannerisms and clothing.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the tavern keeper who interacts with 孔乙己 and takes note of his debts over time.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>掌柜 manages the tavern where 孔乙己 drinks and owes money, indicating a debtor-creditor relationship<|>7)
+##
+("relationship"<|>掌柜<|>孔乙己<|>掌柜 refers to 孔乙己's ongoing debt during various times of the year, showing awareness of his financial issues<|>6)
+<|COMPLETE|>
+2025-04-13 17:53:59,323 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:53:59,328 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character described as wearing tattered clothing and having a weary appearance. He appears to be in a state of dishevelment and is struggling financially, as indicated by his debts and discussions about money and alcohol.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 (the shopkeeper) is a figure interacting with 孔乙己, involved in commerce and expressing both familiarity and concern for 孔乙己's actions and debts.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>孔乙己 is a regular customer at the shop of the掌柜, who expresses both concern over孔乙己's situation and manages his debts<|>7)
+<|COMPLETE|>
+2025-04-13 17:54:00,056 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:00,059 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who has not been seen for a while and is known for having stolen, resulting in a broken leg and potential death.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the shopkeeper who mentions孔乙己 and is involved in calculating accounts.)
+##
+("entity"<|>丁举人<|>PERSON<|>丁举人 is the person whose belongings 孔乙己 attempted to steal.)
+##
+("entity"<|>中秋<|>EVENT<|>中秋 is a festival occurring shortly before the events described in the text, marking a significant cultural moment.)
+##
+("entity"<|>初冬<|>EVENT<|>初冬 refers to the beginning of winter, with seasonal changes noted in the atmosphere described in the text.)
 
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
-    hf_hub_download(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
-    raise head_call_error
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
-    r = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
-    response = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
-    hf_raise_for_status(response)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
-    raise _format(RepositoryNotFoundError, message, response) from e
-huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fa86-64e057cb51446b2d208f6023;df0029a5-0889-4403-8bd8-09a888c127d9)
-
-Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
-Please make sure you specified the correct `repo_id` and `repo_type`.
-If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
-Invalid username or password.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
-    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
-    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
-    resolved_config_file = cached_file(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
-    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
-    raise EnvironmentError(
-OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
-If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
-2025-04-05 17:50:11,427 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:50:11,427 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:50:11,427 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:50:11,427 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:50:11,429 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:50:11,430 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:50:11,430 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:50:11,431 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:50:11,440 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:50:12,244 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
-    response.raise_for_status()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
-    hf_hub_download(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
-    raise head_call_error
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
-    r = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
-    response = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
-    hf_raise_for_status(response)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
-    raise _format(RepositoryNotFoundError, message, response) from e
-huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fcd6-0134d95402aaecc836af151f;5a4c72a6-e52b-48ba-8f25-13d833a3a1f1)
-
-Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
-Please make sure you specified the correct `repo_id` and `repo_type`.
-If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
-Invalid username or password.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
-    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
-    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
-    resolved_config_file = cached_file(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
-    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
-    raise EnvironmentError(
-OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
-If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
-2025-04-05 17:50:36,526 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:50:36,526 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:50:36,527 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:50:36,527 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:50:36,534 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:50:36,535 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:50:36,535 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:50:36,538 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:50:51,395 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:51:36,371 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
-    response.raise_for_status()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
-    hf_hub_download(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
-    raise head_call_error
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
-    r = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
-    response = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
-    hf_raise_for_status(response)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
-    raise _format(RepositoryNotFoundError, message, response) from e
-huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fd1a-622c65c11e750b945fbd3c81;65a3f231-0608-438d-8715-602135f1130f)
-
-Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
-Please make sure you specified the correct `repo_id` and `repo_type`.
-If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
-Invalid username or password.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
-    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
-    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
-    resolved_config_file = cached_file(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
-    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
-    raise EnvironmentError(
-OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
-If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
-2025-04-05 17:51:47,257 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:51:47,257 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:51:47,257 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:51:47,257 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:51:47,259 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:51:47,259 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:51:47,260 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:51:47,261 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:51:47,270 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 17:51:47,945 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 409, in hf_raise_for_status
-    response.raise_for_status()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/requests/models.py", line 1024, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)
-requests.exceptions.HTTPError: 401 Client Error: Unauthorized for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 424, in cached_files
-    hf_hub_download(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 961, in hf_hub_download
-    return _hf_hub_download_to_cache_dir(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1068, in _hf_hub_download_to_cache_dir
-    _raise_on_head_call_error(head_call_error, force_download, local_files_only)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1596, in _raise_on_head_call_error
-    raise head_call_error
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1484, in _get_metadata_or_catch_error
-    metadata = get_hf_file_metadata(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_validators.py", line 114, in _inner_fn
-    return fn(*args, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 1401, in get_hf_file_metadata
-    r = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 285, in _request_wrapper
-    response = _request_wrapper(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/file_download.py", line 309, in _request_wrapper
-    hf_raise_for_status(response)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/huggingface_hub/utils/_http.py", line 459, in hf_raise_for_status
-    raise _format(RepositoryNotFoundError, message, response) from e
-huggingface_hub.errors.RepositoryNotFoundError: 401 Client Error. (Request ID: Root=1-67f0fd36-53c9fbdd4f052019279a2b8b;8672c77e-0626-4eed-bf53-e4ca7f2e1e5c)
-
-Repository Not Found for url: https://huggingface.co/cl100k_base/resolve/main/tokenizer_config.json.
-Please make sure you specified the correct `repo_id` and `repo_type`.
-If you are trying to access a private or gated repo, make sure you are authenticated. For more details, see https://huggingface.co/docs/huggingface_hub/authentication
-Invalid username or password.
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 28, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 75, in create_base_text_units
-    tokenizer = AutoTokenizer.from_pretrained(encoding_model, use_fast=True)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 910, in from_pretrained
-    tokenizer_config = get_tokenizer_config(pretrained_model_name_or_path, **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/models/auto/tokenization_auto.py", line 742, in get_tokenizer_config
-    resolved_config_file = cached_file(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 266, in cached_file
-    file = cached_files(path_or_repo_id=path_or_repo_id, filenames=[filename], **kwargs)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/transformers/utils/hub.py", line 456, in cached_files
-    raise EnvironmentError(
-OSError: cl100k_base is not a local folder and is not a valid model identifier listed on 'https://huggingface.co/models'
-If this is a private repository, make sure to pass a token having permission to this repo either by logging in with `huggingface-cli login` or by passing `token=<your_token>`
-2025-04-05 17:56:01,254 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 17:56:01,254 - storage.input.factory - INFO - using file storage for input
-2025-04-05 17:56:01,254 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 17:56:01,255 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 17:56:01,260 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 17:56:01,261 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 17:56:01,261 - __main__ - INFO - Running standard indexing.
-2025-04-05 17:56:01,262 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 17:56:07,065 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:40:06,908 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:40:06,909 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:40:06,909 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:40:06,909 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:40:06,912 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:40:06,912 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:40:06,912 - __main__ - INFO - Running standard indexing.
-2025-04-05 18:40:06,914 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 18:40:06,947 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:40:14,200 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 23, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in create_base_text_units
-    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
-    return op.apply().__finalize__(self, method="apply")
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
-    return self.apply_standard()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
-    results, res_index = self.apply_series_generator()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
-    results[i] = self.func(v, *self.args, **self.kwargs)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in <lambda>
-    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 93, in chunker
-    chunked = chunk_text(
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 50, in chunk_text
-    input.apply(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
-    return op.apply().__finalize__(self, method="apply")
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
-    return self.apply_standard()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
-    results, res_index = self.apply_series_generator()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
-    results[i] = self.func(v, *self.args, **self.kwargs)
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 53, in <lambda>
-    lambda x: run_strategy(
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 77, in run_strategy
-    strategy_results = strategy_exec(texts, config)
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/strategies.py", line 25, in run_tokens
-    return split_multiple_texts_on_tokens(
-  File "/home/fucker/aai/cycler/workflows/opera/text_split/text_split.py", line 39, in split_multiple_texts_on_tokens
-    chunk_text = tokenizer.decode([id for _, id in chunk_ids])
-AttributeError: 'Tokenizer' object has no attribute 'decode'
-2025-04-05 18:40:38,439 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:40:38,440 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:40:38,440 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:40:38,440 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:40:38,449 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:40:38,450 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:40:38,450 - __main__ - INFO - Running standard indexing.
-2025-04-05 18:40:38,452 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 18:40:43,942 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:40:53,580 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 78, in _run_pipeline
-    result = await workflow_function(config, context)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 23, in run_workflow
-    output = create_base_text_units(
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in create_base_text_units
-    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
-    return op.apply().__finalize__(self, method="apply")
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
-    return self.apply_standard()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
-    results, res_index = self.apply_series_generator()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
-    results[i] = self.func(v, *self.args, **self.kwargs)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 114, in <lambda>
-    aggregated = aggregated.apply(lambda row: chunker(row), axis=1)
-  File "/home/fucker/aai/cycler/workflows/create_base_text_unit.py", line 93, in chunker
-    chunked = chunk_text(
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 50, in chunk_text
-    input.apply(
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/frame.py", line 10374, in apply
-    return op.apply().__finalize__(self, method="apply")
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 916, in apply
-    return self.apply_standard()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1063, in apply_standard
-    results, res_index = self.apply_series_generator()
-  File "/home/fucker/aai/cycler/venv/lib/python3.10/site-packages/pandas/core/apply.py", line 1081, in apply_series_generator
-    results[i] = self.func(v, *self.args, **self.kwargs)
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 53, in <lambda>
-    lambda x: run_strategy(
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/chunk_text.py", line 77, in run_strategy
-    strategy_results = strategy_exec(texts, config)
-  File "/home/fucker/aai/cycler/workflows/opera/chunk_text/strategies.py", line 25, in run_tokens
-    return split_multiple_texts_on_tokens(
-  File "/home/fucker/aai/cycler/workflows/opera/text_split/text_split.py", line 39, in split_multiple_texts_on_tokens
-    chunk_text = tokenizer.decode([id for _, id in chunk_ids])
-AttributeError: 'Tokenizer' object has no attribute 'decode'
-2025-04-05 18:41:46,074 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:41:46,075 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:41:46,075 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:41:46,075 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:41:46,077 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:41:46,077 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:41:46,077 - __main__ - INFO - Running standard indexing.
-2025-04-05 18:41:46,078 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 18:41:46,086 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:41:48,498 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 79, in _run_pipeline
-    yield PipelineRunResult(
-TypeError: PipelineRunResult() takes no arguments
-2025-04-05 18:42:36,391 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:42:36,392 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:42:36,392 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:42:36,393 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:42:36,399 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:42:36,401 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:42:36,401 - __main__ - INFO - Running standard indexing.
-2025-04-05 18:42:36,403 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 18:42:41,249 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:46:33,690 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:46:33,691 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:46:33,691 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:46:33,691 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:46:33,693 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:46:33,693 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:46:33,693 - __main__ - INFO - Running standard indexing.
-2025-04-05 18:46:33,694 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 18:46:33,705 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:46:35,637 - __main__ - ERROR - error running workflow create_base_text_unit
-Traceback (most recent call last):
-  File "/home/fucker/aai/cycler/main.py", line 79, in _run_pipeline
-    yield PipelineRunResult(
-TypeError: PipelineRunResult.__init__() got an unexpected keyword argument 'errors'
-2025-04-05 18:47:08,924 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:47:08,924 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:47:08,925 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:47:08,925 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:47:08,926 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:47:08,927 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:47:08,927 - __main__ - INFO - Running standard indexing.
-2025-04-05 18:47:08,927 - __main__ - INFO - Final # of rows loaded: 1
-2025-04-05 18:47:08,935 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:47:10,802 - __main__ - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
-0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
-
-[1 rows x 4 columns], state={}, errors=None)
-2025-04-05 18:54:59,048 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 18:54:59,048 - storage.input.factory - INFO - using file storage for input
-2025-04-05 18:54:59,048 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 18:54:59,049 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 18:54:59,051 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 18:54:59,052 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 18:54:59,052 - run.run - INFO - Running standard indexing.
-2025-04-05 18:54:59,053 - run.run - INFO - Final # of rows loaded: 1
-2025-04-05 18:54:59,076 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 18:55:02,219 - run.run - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
-0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
-
-[1 rows x 4 columns], state={}, errors=None)
-2025-04-05 19:09:24,449 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 19:09:24,449 - storage.input.factory - INFO - using file storage for input
-2025-04-05 19:09:24,449 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 19:09:24,449 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 19:09:24,451 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 19:09:24,451 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 19:09:24,451 - run.run - INFO - Running standard indexing.
-2025-04-05 19:09:24,452 - run.run - INFO - Final # of rows loaded: 1
-2025-04-05 19:09:24,467 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 19:09:27,210 - run.run - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
-0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
-
-[1 rows x 4 columns], state={}, errors=None)
-2025-04-05 19:09:27,218 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 19:09:27,221 - utils.storage - INFO - reading table from storage: text_units.parquet
-2025-04-05 19:09:27,239 - run.run - INFO - PipelineRunResult(workflow='create_final_documents', result=                                                  id  human_readable_id  ...              creation_date metadata
-0  02612f39bec86bb5f305619858d71da82597ad1c24e487...                  1  ...  2025-04-05 16:23:56 +0800      NaN
-
-[1 rows x 7 columns], state={}, errors=None)
-2025-04-05 22:05:10,163 - storage.input.factory - INFO - loading input from root_dir=input
-2025-04-05 22:05:10,163 - storage.input.factory - INFO - using file storage for input
-2025-04-05 22:05:10,164 - storage.file_pipeline_storage - INFO - search input/input for files matching 
-2025-04-05 22:05:10,164 - storage.file_pipeline_storage - INFO - total files: 1
-2025-04-05 22:05:10,170 - storage.input.text - INFO - Found 1 InputFileType.text files, loading 1
-2025-04-05 22:05:10,171 - storage.input.text - INFO - Total number of unfiltered text rows: 1
-2025-04-05 22:05:10,171 - run.run - INFO - Running standard indexing.
-2025-04-05 22:05:10,173 - run.run - INFO - Final # of rows loaded: 1
-2025-04-05 22:05:10,228 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 22:05:13,303 - run.run - INFO - PipelineRunResult(workflow='create_base_text_unit', result=                                                  id  ... n_tokens
-0  a7bc867db54adb3f9e0ee78f0427be05d7e0668ce1bffe...  ...      135
-
-[1 rows x 4 columns], state={}, errors=None)
-2025-04-05 22:05:13,323 - utils.storage - INFO - reading table from storage: documents.parquet
-2025-04-05 22:05:13,367 - utils.storage - INFO - reading table from storage: text_units.parquet
-2025-04-05 22:05:13,412 - run.run - INFO - PipelineRunResult(workflow='create_final_documents', result=                                                  id  human_readable_id  ...              creation_date metadata
-0  02612f39bec86bb5f305619858d71da82597ad1c24e487...                  1  ...  2025-04-05 16:23:56 +0800      NaN
-
-[1 rows x 7 columns], state={}, errors=None)
-2025-04-05 22:05:29,793 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
-2025-04-05 22:05:29,796 - __main__ - INFO - 
-2025-04-05 22:05:29,796 - __main__ - INFO - 当然
-2025-04-05 22:05:29,797 - __main__ - INFO - 可以
-2025-04-05 22:05:29,797 - __main__ - INFO - ！
-2025-04-05 22:05:29,798 - __main__ - INFO - 这是
-2025-04-05 22:05:29,798 - __main__ - INFO - 一个
-2025-04-05 22:05:29,799 - __main__ - INFO - 经典
-2025-04-05 22:05:29,799 - __main__ - INFO - 的
-2025-04-05 22:05:29,800 - __main__ - INFO - 笑
-2025-04-05 22:05:29,974 - __main__ - INFO - 话
-2025-04-05 22:05:29,975 - __main__ - INFO - ：
-
-
-2025-04-05 22:05:29,976 - __main__ - INFO - 有
-2025-04-05 22:05:29,977 - __main__ - INFO - 一天
-2025-04-05 22:05:29,977 - __main__ - INFO - ，一个
-2025-04-05 22:05:29,985 - __main__ - INFO - 番
-2025-04-05 22:05:29,986 - __main__ - INFO - 茄
-2025-04-05 22:05:29,987 - __main__ - INFO - 和
-2025-04-05 22:05:29,987 - __main__ - INFO - 一个
-2025-04-05 22:05:29,988 - __main__ - INFO - 胡
-2025-04-05 22:05:29,988 - __main__ - INFO - 椒
-2025-04-05 22:05:29,989 - __main__ - INFO - 在
-2025-04-05 22:05:29,989 - __main__ - INFO - 马
-2025-04-05 22:05:29,990 - __main__ - INFO - 路
-2025-04-05 22:05:29,992 - __main__ - INFO - 上
-2025-04-05 22:05:29,997 - __main__ - INFO - 走
-2025-04-05 22:05:29,997 - __main__ - INFO - ，
-2025-04-05 22:05:29,998 - __main__ - INFO - 突然
-2025-04-05 22:05:30,139 - __main__ - INFO - 一个
-2025-04-05 22:05:30,140 - __main__ - INFO - 汽车
-2025-04-05 22:05:30,140 - __main__ - INFO - 飞
-2025-04-05 22:05:30,140 - __main__ - INFO - 驰
-2025-04-05 22:05:30,140 - __main__ - INFO - 而
-2025-04-05 22:05:30,141 - __main__ - INFO - 过
-2025-04-05 22:05:30,141 - __main__ - INFO - ，把
-2025-04-05 22:05:30,142 - __main__ - INFO - 番
-2025-04-05 22:05:30,142 - __main__ - INFO - 茄
-2025-04-05 22:05:30,142 - __main__ - INFO - 撞
-2025-04-05 22:05:30,143 - __main__ - INFO - 了
-2025-04-05 22:05:30,143 - __main__ - INFO - 。
-2025-04-05 22:05:30,144 - __main__ - INFO - 胡
-2025-04-05 22:05:30,144 - __main__ - INFO - 椒
-2025-04-05 22:05:30,145 - __main__ - INFO - 见
-2025-04-05 22:05:30,145 - __main__ - INFO - 状
-2025-04-05 22:05:30,146 - __main__ - INFO - ，这
-2025-04-05 22:05:30,147 - __main__ - INFO - 下
-2025-04-05 22:05:30,147 - __main__ - INFO - 可
-2025-04-05 22:05:30,147 - __main__ - INFO - 慌
-2025-04-05 22:05:30,148 - __main__ - INFO - 了
-2025-04-05 22:05:30,148 - __main__ - INFO - ，
-2025-04-05 22:05:30,149 - __main__ - INFO - 赶
-2025-04-05 22:05:30,150 - __main__ - INFO - 紧
-2025-04-05 22:05:30,150 - __main__ - INFO - 说
-2025-04-05 22:05:30,150 - __main__ - INFO - ：“
-2025-04-05 22:05:30,150 - __main__ - INFO - 番
-2025-04-05 22:05:30,151 - __main__ - INFO - 茄
-2025-04-05 22:05:30,158 - __main__ - INFO - ，你
-2025-04-05 22:05:30,159 - __main__ - INFO - 没
-2025-04-05 22:05:30,165 - __main__ - INFO - 事
-2025-04-05 22:05:30,166 - __main__ - INFO - 吧
-2025-04-05 22:05:30,166 - __main__ - INFO - ？”
-2025-04-05 22:05:30,167 - __main__ - INFO -  
-
-
-2025-04-05 22:05:30,167 - __main__ - INFO - 番
-2025-04-05 22:05:30,168 - __main__ - INFO - 茄
-2025-04-05 22:05:30,168 - __main__ - INFO - 一
-2025-04-05 22:05:30,168 - __main__ - INFO - 边
-2025-04-05 22:05:30,168 - __main__ - INFO - 爬
-2025-04-05 22:05:30,169 - __main__ - INFO - 起来
-2025-04-05 22:05:30,169 - __main__ - INFO - ，一
-2025-04-05 22:05:30,169 - __main__ - INFO - 边
-2025-04-05 22:05:30,169 - __main__ - INFO - 说
-2025-04-05 22:05:30,169 - __main__ - INFO - ：“
-2025-04-05 22:05:30,170 - __main__ - INFO - 没
-2025-04-05 22:05:30,170 - __main__ - INFO - 事
-2025-04-05 22:05:30,170 - __main__ - INFO - ，我
-2025-04-05 22:05:30,188 - __main__ - INFO - 只是
-2025-04-05 22:05:30,188 - __main__ - INFO - 被
-2025-04-05 22:05:30,189 - __main__ - INFO - ‘
-2025-04-05 22:05:30,189 - __main__ - INFO - 车
-2025-04-05 22:05:30,189 - __main__ - INFO - ’
-2025-04-05 22:05:30,190 - __main__ - INFO - 了
-2025-04-05 22:05:30,190 - __main__ - INFO - ！”
-2025-04-05 22:05:30,306 - __main__ - INFO -  
-
-
-2025-04-05 22:05:30,307 - __main__ - INFO - 希望
-2025-04-05 22:05:30,307 - __main__ - INFO - 这个
-2025-04-05 22:05:30,307 - __main__ - INFO - 笑
-2025-04-05 22:05:30,307 - __main__ - INFO - 话
-2025-04-05 22:05:30,307 - __main__ - INFO - 能
-2025-04-05 22:05:30,308 - __main__ - INFO - 让
-2025-04-05 22:05:30,308 - __main__ - INFO - 你
-2025-04-05 22:05:30,308 - __main__ - INFO - 笑
-2025-04-05 22:05:30,308 - __main__ - INFO - 出来
-2025-04-05 22:05:30,308 - __main__ - INFO - ！
-2025-04-05 22:05:30,310 - __main__ - INFO - None
+##
+("relationship"<|>孔乙己<|>掌柜<|>掌柜 mentions孔乙己's absence and criminal behavior, indicating a relationship based on local knowledge and gossip.<|>7)
+##
+("relationship"<|>孔乙己<|>丁举人<|>孔乙己 stole from丁举人, suggesting a direct interaction through the act of theft.<|>6)
+##
+("relationship"<|>掌柜<|>孔乙己<|>掌柜 is aware of孔乙己's actions and his current situation, depicting a community connection.<|>5)
+##
+("relationship"<|>掌柜<|>丁举人<|>掌柜 discusses丁举人的 possessions in relation to孔乙己, indicating familiarity with the community members.<|>4)
+##
+("relationship"<|>中秋<|>初冬<|>中秋 serves as a temporal indicator leading into the初冬 season, signifying the passage of time.<|>3)
+<|COMPLETE|>
+2025-04-13 17:54:00,072 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:00,075 - graph.extract.extractor - INFO - results: ("entity"<|>孔乙己<|>PERSON<|>孔乙己 is a character who is humorous and brings joy to children, but has fallen into bad circumstances and is currently absent from his usual activities.)
+##
+("entity"<|>掌柜<|>PERSON<|>掌柜 is the innkeeper who manages the establishment and is aware of the absence of 孔乙己, discussing his debts and past actions.)
+##
+("entity"<|>丁举人<|>PERSON<|>丁举人 is a figure whose belongings were allegedly stolen by 孔乙己, contributing to his troubles and highlighting his illegal activities.)
+##
+("entity"<|>中秋<|>EVENT<|>中秋 refers to the Mid-Autumn Festival, an important cultural event that serves as the backdrop for the narrative.)
+##
+("relationship"<|>孔乙己<|>掌柜<|>掌柜 reflects on the absence and debts owed by 孔乙己 during conversations with others, indicating a relationship of concern and management<|>6)
+##
+("relationship"<|>孔乙己<|>丁举人<|>孔乙己 is discussed in the context of having stolen from 丁举人, indicating a negative relationship marked by criminal activity<|>7)
+##
+("relationship"<|>掌柜<|>丁举人<|>掌柜 discusses 孔乙己’s previous actions toward 丁举人 and his belongings, indicating an awareness of the issues between them<|>5)
+##
+("relationship"<|>孔乙己<|>中秋<|>孔乙己's narrative occurs around the time of 中秋, suggesting a cultural significance to his actions and absence<|>4)
+<|COMPLETE|>
+2025-04-13 17:54:00,568 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:00,683 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:00,691 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:00,905 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:01,371 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:03,004 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:03,051 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:04,301 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-13 17:54:06,657 - httpx - INFO - HTTP Request: POST https://api.agicto.cn/v1/chat/completions "HTTP/1.1 200 OK"

@@ -1,309 +1,267 @@
 import logging
 import re
-import traceback
-from collections.abc import Mapping
-from dataclasses import dataclass
-from typing import Any
 import html
+import asyncio
+from typing import Any, List, Optional, TypeVar
+import pandas as pd
 import networkx as nx
-import tiktoken
+from transformers import AutoTokenizer
 from llm.protocol.base import ChatModel
 from config.model.extract_config import ExtractGraphConfig
 from graphrag.prompts.index.extract_graph import (
     CONTINUE_PROMPT,
-    GRAPH_EXTRACTION_PROMPT,
     LOOP_PROMPT,
 )
-
-DEFAULT_TUPLE_DELIMITER = "<|>"
-DEFAULT_RECORD_DELIMITER = "##"
-DEFAULT_COMPLETION_DELIMITER = "<|COMPLETE|>"
-DEFAULT_ENTITY_TYPES = ["organization", "person", "geo", "event"]
+from .typing import Document, ExtractionResult
 
 log = logging.getLogger(__name__)
-
-
-@dataclass
-class GraphExtractionResult:
-    """Unipartite graph extraction result class definition."""
-
-    output: nx.Graph
-    source_docs: dict[Any, Any]
-
+T = TypeVar('T')
 
 class GraphExtractor:
-    """Unipartite graph extractor class definition."""
-
-    model: ChatModel
-    join_descriptions: bool
-    tuple_delimiter_key: str
-    record_delimiter_key: str
-    entity_types_key: str
-    input_text_key: str
-    completion_delimiter_key: str
-    entity_name_key: str
-    input_descriptions_key: str
-    extraction_prompt: str
-    summarization_prompt: str
-    loop_args: dict[str, Any]
-    max_gleanings: int
+    """图实体关系提取器"""
 
     def __init__(
         self,
-        model_invoker: ChatModel,
-        tuple_delimiter_key: str | None = None,
-        record_delimiter_key: str | None = None,
-        input_text_key: str | None = None,
-        entity_types_key: str | None = None,
-        completion_delimiter_key: str | None = None,
-        prompt: str | None = None,
-        join_descriptions=True,
-        encoding_model: str | None = None,
-        max_gleanings: int | None = None,
+        model: ChatModel,
+        entity_types: List[str] = ["organization", "person", "geo", "event"],
+        join_descriptions: bool = True,
+        encoding_model: Optional[str] = None,
+        max_gleanings: Optional[int] = None,
+        batch_size: int = 10,
     ):
-        """Init method definition."""
-        # TODO: streamline construction
-        self.model = model_invoker
+        """初始化图实体关系提取器
+        
+        Args:
+            model: 语言模型
+            prompt: 提示词模板
+            entity_types: 实体类型列表
+            join_descriptions: 是否合并描述
+            encoding_model: 编码模型名称
+            max_gleanings: 最大提取次数
+            batch_size: 批处理大小
+        """
+        self.model = model
+        self.entity_types = entity_types
         self.join_descriptions = join_descriptions
-        self.input_text_key = input_text_key or "input_text"
-        self.tuple_delimiter_key = tuple_delimiter_key or "tuple_delimiter"
-        self.record_delimiter_key = record_delimiter_key or "record_delimiter"
-        self.completion_delimiter_key = (
-            completion_delimiter_key or "completion_delimiter"
-        )
-        self.entity_types_key = entity_types_key or "entity_types"
-        self.extraction_prompt = prompt or GRAPH_EXTRACTION_PROMPT
         self.config = ExtractGraphConfig()
-        self.max_gleanings = (
-            max_gleanings
-            if max_gleanings is not None
-            else self.config.max_gleanings
-        )
+        self.max_gleanings = max_gleanings or self.config.max_gleanings
+        self.batch_size = batch_size
 
-        # Construct the looping arguments
-        encoding = tiktoken.get_encoding(self._config.encoding_model)
-        yes = f"{encoding.encode('Y')[0]}"
-        no = f"{encoding.encode('N')[0]}"
-        self._loop_args = {"logit_bias": {yes: 100, no: 100}, "max_tokens": 1}
+        # 构建循环参数
+        tokenizer = AutoTokenizer.from_pretrained(encoding_model or self.config.encoding_model)
+        yes = f"{tokenizer.encode('Y')[0]}"
+        no = f"{tokenizer.encode('N')[0]}"
+        self.loop_args = {"logit_bias": {yes: 100, no: 100}, "max_tokens": 1}
 
-    async def __call__(
-        self, texts: list[str], prompt_variables: dict[str, Any] | None = None
-    ) -> GraphExtractionResult:
-        """Call method definition."""
-        if prompt_variables is None:
-            prompt_variables = {}
-        all_records: dict[int, str] = {}
-        source_doc_map: dict[int, str] = {}
+    async def extract_from_dataframe(
+        self,
+        df: pd.DataFrame,
+        text_column: str,
+        id_column: str,
+        prompt: str,
+        prompt_variables: dict
+    ) -> ExtractionResult:
+        """从DataFrame中提取实体关系"""
+        # 将DataFrame转换为Document列表
+        documents = [
+            Document(text=row[text_column], id=str(row[id_column]))
+            for _, row in df.iterrows()
+        ]
+        return await self.extract_from_documents(documents, prompt, prompt_variables)
 
-        # Wire defaults into the prompt variables
-        prompt_variables = {
-            **prompt_variables,
-            self._tuple_delimiter_key: prompt_variables.get(self._tuple_delimiter_key)
-            or DEFAULT_TUPLE_DELIMITER,
-            self._record_delimiter_key: prompt_variables.get(self._record_delimiter_key)
-            or DEFAULT_RECORD_DELIMITER,
-            self._completion_delimiter_key: prompt_variables.get(
-                self._completion_delimiter_key
+    async def extract_from_documents(
+        self,
+        documents: List[Document],
+        prompt: str,
+        prompt_variables: dict
+    ) -> ExtractionResult:
+        """从文档列表中提取实体关系"""
+        # 分批处理文档
+        batches = [
+            documents[i:i + self.batch_size]
+            for i in range(0, len(documents), self.batch_size)
+        ]
+        
+        # 并发处理每个批次
+        all_entities = []
+        all_relationships = []
+        
+        for batch in batches:
+            tasks = [self._process_document(doc, prompt, prompt_variables) for doc in batch]
+            batch_results = await asyncio.gather(*tasks, return_exceptions=True)
+            
+            # 过滤出成功的结果
+            for result in batch_results:
+                if isinstance(result, tuple) and result is not None:
+                    entities, relationships = result
+                    all_entities.extend(entities)
+                    all_relationships.extend(relationships)
+
+        if not all_entities and not all_relationships:
+            return ExtractionResult(
+                entities=pd.DataFrame(),
+                relationships=pd.DataFrame(),
+                graph=nx.Graph()
             )
-            or DEFAULT_COMPLETION_DELIMITER,
-            self._entity_types_key: ",".join(
-                prompt_variables[self._entity_types_key] or DEFAULT_ENTITY_TYPES
-            ),
-        }
 
-        for doc_index, text in enumerate(texts):
-            try:
-                # Invoke the entity extraction
-                result = await self._process_document(text, prompt_variables)
-                source_doc_map[doc_index] = text
-                all_records[doc_index] = result
-            except Exception as e:
-                log.exception("error extracting graph")
-                self._on_error(
-                    e,
-                    traceback.format_exc(),
-                    {
-                        "doc_index": doc_index,
-                        "text": text,
-                    },
-                )
+        # 转换为DataFrame并合并
+        entities_df = pd.DataFrame(all_entities)
+        relationships_df = pd.DataFrame(all_relationships)
+        
+        # 合并实体和关系
+        entities = self._merge_entities([entities_df])
+        relationships = self._merge_relationships([relationships_df])
+        
+        # 构建最终图
+        final_graph = self._build_graph_from_dataframes(entities, relationships)
 
-        output = await self._process_results(
-            all_records,
-            prompt_variables.get(self._tuple_delimiter_key, DEFAULT_TUPLE_DELIMITER),
-            prompt_variables.get(self._record_delimiter_key, DEFAULT_RECORD_DELIMITER),
-        )
-
-        return GraphExtractionResult(
-            output=output,
-            source_docs=source_doc_map,
+        return ExtractionResult(
+            entities=entities,
+            relationships=relationships,
+            graph=final_graph
         )
 
     async def _process_document(
-        self, text: str, prompt_variables: dict[str, str]
-    ) -> str:
-        response = await self._model.achat(
-            self._extraction_prompt.format(**{
-                **prompt_variables,
-                self._input_text_key: text,
-            }),
-        )
-        results = response.content or ""
-
-        # Repeat to ensure we maximize entity count
-        for i in range(self.max_gleanings):
-            response = await self._model.achat(
-                CONTINUE_PROMPT,
-                name=f"extract-continuation-{i}",
-                history=response.history,
-            )
-            results += response.content or ""
-
-            # if this is the final glean, don't bother updating the continuation flag
-            if i >= self.max_gleanings - 1:
-                break
-
-            response = await self._model.achat(
-                LOOP_PROMPT,
-                name=f"extract-loopcheck-{i}",
-                history=response.history,
-                model_parameters=self._loop_args,
-            )
-
-            if response.output.content != "Y":
-                break
-
-        return results
-
-    async def _process_results(
-        self,
-        results: dict[int, str],
-        tuple_delimiter: str,
-        record_delimiter: str,
-    ) -> nx.Graph:
-        """Parse the result string to create an undirected unipartite graph.
-
+        self, 
+        doc: Document,
+        prompt: str,
+        prompt_variables: dict
+    ) -> tuple[list[dict], list[dict]] | None:
+        """处理单个文档，提取实体和关系
+        
         Args:
-            - results - dict of results from the extraction chain
-            - tuple_delimiter - delimiter between tuples in an output record, default is '<|>'
-            - record_delimiter - delimiter between records, default is '##'
+            doc: 文档对象
+            
         Returns:
-            - output - unipartite graph in graphML format
+            tuple: (实体列表, 关系列表) 或 None（处理失败时）
         """
-        graph = nx.Graph()
-        for source_doc_id, extracted_data in results.items():
-            records = [r.strip() for r in extracted_data.split(record_delimiter)]
+        try:
+            # 提取实体和关系
+            response = await self.model.achat(
+                prompt.format(**{
+                    **prompt_variables,
+                    "input_text": doc.text
+                })
+            )
+            results = response.content or ""
+            log.info(f"results: {results}")
+            # 重复提取以最大化实体数量
+            for i in range(self.max_gleanings):
+                response = await self.model.achat(
+                    CONTINUE_PROMPT,
+                    history=response.history,
+                )
+                results += response.content or ""
 
-            for record in records:
-                record = re.sub(r"^\(|\)$", "", record.strip())
-                record_attributes = record.split(tuple_delimiter)
+                if i >= self.max_gleanings - 1:
+                    break
 
-                if record_attributes[0] == '"entity"' and len(record_attributes) >= 4:
-                    # add this record as a node in the G
-                    entity_name = clean_str(record_attributes[1].upper())
-                    entity_type = clean_str(record_attributes[2].upper())
-                    entity_description = clean_str(record_attributes[3])
+                response = await self.model.achat(
+                    LOOP_PROMPT,
+                    history=response.history,
+                    model_parameters=self.loop_args,
+                )
 
-                    if entity_name in graph.nodes():
-                        node = graph.nodes[entity_name]
-                        if self._join_descriptions:
-                            node["description"] = "\n".join(
-                                list({
-                                    *_unpack_descriptions(node),
-                                    entity_description,
-                                })
-                            )
-                        else:
-                            if len(entity_description) > len(node["description"]):
-                                node["description"] = entity_description
-                        node["source_id"] = ", ".join(
-                            list({
-                                *_unpack_source_ids(node),
-                                str(source_doc_id),
-                            })
-                        )
-                        node["type"] = (
-                            entity_type if entity_type != "" else node["type"]
-                        )
-                    else:
-                        graph.add_node(
-                            entity_name,
-                            type=entity_type,
-                            description=entity_description,
-                            source_id=str(source_doc_id),
-                        )
+                if response.content != "Y":
+                    break
 
-                if (
-                    record_attributes[0] == '"relationship"'
-                    and len(record_attributes) >= 5
-                ):
-                    # add this record as edge
-                    source = clean_str(record_attributes[1].upper())
-                    target = clean_str(record_attributes[2].upper())
-                    edge_description = clean_str(record_attributes[3])
-                    edge_source_id = clean_str(str(source_doc_id))
+            # 解析结果
+            entities = []
+            relationships = []
+            
+            for record in results.split("##"):
+                record = record.strip()
+                if not record:
+                    continue
+                    
+                record = re.sub(r"^\(|\)$", "", record)
+                attrs = record.split("<|>")
+                
+                if len(attrs) < 4:
+                    continue
+                    
+                record_type = clean_str(attrs[0])
+                
+                if record_type == '"entity"':
+                    entities.append({
+                        "title": clean_str(attrs[1].upper()),
+                        "type": clean_str(attrs[2].upper()),
+                        "description": clean_str(attrs[3]),
+                        "source_id": doc.id
+                    })
+                elif record_type == '"relationship"' and len(attrs) >= 5:
                     try:
-                        weight = float(record_attributes[-1])
-                    except ValueError:
+                        weight = float(attrs[-1])
+                    except (ValueError, IndexError):
                         weight = 1.0
+                        
+                    relationships.append({
+                        "source": clean_str(attrs[1].upper()),
+                        "target": clean_str(attrs[2].upper()),
+                        "description": clean_str(attrs[3]),
+                        "source_id": doc.id,
+                        "weight": weight
+                    })
 
-                    if source not in graph.nodes():
-                        graph.add_node(
-                            source,
-                            type="",
-                            description="",
-                            source_id=edge_source_id,
-                        )
-                    if target not in graph.nodes():
-                        graph.add_node(
-                            target,
-                            type="",
-                            description="",
-                            source_id=edge_source_id,
-                        )
-                    if graph.has_edge(source, target):
-                        edge_data = graph.get_edge_data(source, target)
-                        if edge_data is not None:
-                            weight += edge_data["weight"]
-                            if self._join_descriptions:
-                                edge_description = "\n".join(
-                                    list({
-                                        *_unpack_descriptions(edge_data),
-                                        edge_description,
-                                    })
-                                )
-                            edge_source_id = ", ".join(
-                                list({
-                                    *_unpack_source_ids(edge_data),
-                                    str(source_doc_id),
-                                })
-                            )
-                    graph.add_edge(
-                        source,
-                        target,
-                        weight=weight,
-                        description=edge_description,
-                        source_id=edge_source_id,
-                    )
+            return entities, relationships
+
+        except Exception as e:
+            log.error(f"处理文档时出错: {e}, 文档ID: {doc.id}")
+            return None
+
+    def _merge_entities(self, entity_dfs: List[pd.DataFrame]) -> pd.DataFrame:
+        """合并实体DataFrame"""
+        if not entity_dfs:
+            return pd.DataFrame()
+            
+        return pd.concat(entity_dfs, ignore_index=True).groupby(
+            ["title", "type"], sort=False
+        ).agg(
+            description=("description", list),
+            text_unit_ids=("source_id", list),
+            frequency=("source_id", "count")
+        ).reset_index()
+
+    def _merge_relationships(self, relationship_dfs: List[pd.DataFrame]) -> pd.DataFrame:
+        """合并关系DataFrame"""
+        if not relationship_dfs:
+            return pd.DataFrame()
+            
+        return pd.concat(relationship_dfs, ignore_index=True).groupby(
+            ["source", "target"], sort=False
+        ).agg(
+            description=("description", list),
+            text_unit_ids=("source_id", list),
+            weight=("weight", "sum")
+        ).reset_index()
+
+    def _build_graph_from_dataframes(self, entities: pd.DataFrame, relationships: pd.DataFrame) -> nx.Graph:
+        """从实体和关系DataFrame构建图"""
+        graph = nx.Graph()
+        
+        for _, row in entities.iterrows():
+            graph.add_node(
+                row["title"],
+                type=row["type"],
+                description=row["description"],
+                source_id=row["text_unit_ids"]
+            )
+
+        for _, row in relationships.iterrows():
+            graph.add_edge(
+                row["source"],
+                row["target"],
+                weight=row["weight"],
+                description=row["description"],
+                source_id=row["text_unit_ids"]
+            )
 
         return graph
 
 
-def _unpack_descriptions(data: Mapping) -> list[str]:
-    value = data.get("description", None)
-    return [] if value is None else value.split("\n")
-
-
-def _unpack_source_ids(data: Mapping) -> list[str]:
-    value = data.get("source_id", None)
-    return [] if value is None else value.split(", ")
-
-def clean_str(input: Any) -> str:
-    """Clean an input string by removing HTML escapes, control characters, and other unwanted characters."""
-    # If we get non-string input, just give it back
-    if not isinstance(input, str):
-        return input
-
-    result = html.unescape(input.strip())
-    # https://stackoverflow.com/questions/4324790/removing-control-characters-from-a-string-in-python
+def clean_str(text: Any) -> str:
+    """清理字符串"""
+    if not isinstance(text, str):
+        return text
+    result = html.unescape(text.strip())
     return re.sub(r"[\x00-\x1f\x7f-\x9f]", "", result)

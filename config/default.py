@@ -2,7 +2,7 @@ from dataclasses import dataclass, field
 from config.enums import ChunkStrategyType, OutputType, InputFileType, InputType
 DEFAULT_OUTPUT_BASE_DIR = "output"
 DEFAULT_CHAT_MODEL_ID = "gpt-4o-mini"
-DEFAULT_ENCODING_MODEL = "text-embedding-3-small"
+DEFAULT_ENCODING_MODEL = "Alibaba-NLP/gte-Qwen2-7B-instruct"
 @dataclass
 class ChunksDefaults:
 
@@ -29,7 +29,7 @@ class InputDefaults:
     """Default values for input."""
 
     type = InputType.file
-    file_type = InputFileType.text
+    file_type = InputFileType.txt
     base_dir: str = "input"
     connection_string: None = None
     storage_account_blob_url: None = None

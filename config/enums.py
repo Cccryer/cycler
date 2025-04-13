@@ -32,8 +32,8 @@ class InputFileType(str, Enum):
 
     csv = "csv"
     """The CSV input type."""
-    text = "text"
-    """The text input type."""
+    txt = "txt"
+    """The txt input type."""
     json = "json"
     """The JSON input type."""
 
